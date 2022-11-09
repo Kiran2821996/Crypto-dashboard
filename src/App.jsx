@@ -4,11 +4,11 @@ import  Search  from './Components/MenuAppBar'
 import MainPage from './Components/MainPage'
 export default function App() {
   return (
-//    <BrowserRouter>
+   <BrowserRouter>
    <div>
     <MainPage/>
    </div>
    
-//    </BrowserRouter>
+   </BrowserRouter>
   )
 }
