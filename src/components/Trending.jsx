@@ -30,24 +30,7 @@ function Trending() {
     <div>
        
         
-        <div style={{ display: "flex",height:"20vh",flexWrap:"wrap",width:"70%",alignItems:"center",justifyContent:"center"}}>
-        {data.map((item) => {
-          return (
-            
-              <div style={{ display: "flex" }}>
-                <img src={item.item.small} alt="" />
-                <div>
-                  <p>
-                    {item.item.name}({item.item.symbol})
-                  </p>
-                  <p>{item.item.price_btc.toFixed(15)} BTC</p>
-                </div>
-            
-              </div>
-            
-          );
-        })}
-      </div>
+       
         
      
       <div
@@ -98,6 +81,24 @@ function Trending() {
             fillOpacity={0.6}
           />
         </RadarChart>
+      </div>
+      <div style={{ display: "flex",height:"20vh",flexWrap:"wrap",width:"70%",alignItems:"center",justifyContent:"center"}}>
+        {data.map((item) => {
+          return (
+            
+              <div style={{ display: "flex" }}>
+                <img src={item.item.small} alt="" />
+                <div>
+                  <p>
+                    {item.item.name}({item.item.symbol})
+                  </p>
+                  <p>{item.item.price_btc.toFixed(15)} BTC</p>
+                </div>
+            
+              </div>
+            
+          );
+        })}
       </div>
     </div>
   );
