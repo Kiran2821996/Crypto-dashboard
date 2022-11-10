@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Radar,RadialBarChart, RadialBar, Legend, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import {Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 import axios from 'axios'
 
 function Trending() {
