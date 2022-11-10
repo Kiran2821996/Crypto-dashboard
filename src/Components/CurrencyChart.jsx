@@ -20,7 +20,6 @@ let objectData = data.map(function(x){
 })
     return (
         <>
-       
         <LineChart width={600} height={400} data={objectData}>
          <XAxis dataKey="time"/>
          <YAxis dataKey="value"/>
