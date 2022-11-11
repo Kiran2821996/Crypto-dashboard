@@ -14,6 +14,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import axios from "axios";
+import "./Trending.css";
 
 function Trending() {
   const [data, setData] = useState([]);
@@ -27,20 +28,8 @@ function Trending() {
       });
   }, []);
   return (
-    <div>
-       
-        
-       
-        
-     
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100vw",
-        }}
-      >
+    <div className="trending">
+      <div className="trend_chart">
         <AreaChart
           width={800}
           height={300}
@@ -59,10 +48,11 @@ function Trending() {
           <Area
             type="monotone"
             dataKey="item.market_cap_rank"
-            stroke="#8884d8"
-            fill="#8884d8"
+            stroke="#457B9D"
+            fill="#A8DADC"
           />
         </AreaChart>
+    
         <RadarChart
           cx={300}
           cy={250}
@@ -76,17 +66,16 @@ function Trending() {
           <PolarRadiusAxis />
           <Radar
             dataKey="item.price_btc"
-            stroke="#8884d8"
-            fill="#8884d8"
+            stroke="#457B9D"
+            fill="#A8DADC"
             fillOpacity={0.6}
           />
         </RadarChart>
       </div>
-      <div style={{ display: "flex",height:"20vh",flexWrap:"wrap",width:"70%",alignItems:"center",justifyContent:"center"}}>
-        {data.map((item) => {
-          return (
-            
-              <div style={{ display: "flex" }}>
+      <div className="trend_block">
+          {data.map((item) => {
+            return (
+              <div className="trend_block_item" style={{ display: "flex" }}>
                 <img src={item.item.small} alt="" />
                 <div>
                   <p>
@@ -94,12 +83,10 @@ function Trending() {
                   </p>
                   <p>{item.item.price_btc.toFixed(15)} BTC</p>
                 </div>
-            
               </div>
-            
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
     </div>
   );
 }

@@ -1,19 +1,35 @@
+import CoinList from "./components/coinList/CoinList";
+import News from "./components/news/News";
+import Trending from "./components/trending/Trending";
+import "./App.css";
+import { Layout } from "antd";
+import { Routes, Route } from "react-router-dom";
+import HeaderNav from "./components/header/HeaderNav";
 
-
-import Trending from './components/Trending';
-import News from './components/News';
-import CoinList from './components/CoinList';
-import './App.css';
-
+const { Header, Sider, Content } = Layout;
 
 function App() {
   return (
-    <div >
-     <CoinList/>
-      <Trending/>
-     <News/>
-    
-    </div>
+    <Layout>
+      <Header>
+        <CoinList />
+      </Header>
+      <Layout>
+        <Sider>
+          <News />
+        </Sider>
+        <Content>
+          <HeaderNav />
+        <Routes>
+        <Route path="/" element={<Trending />} />
+        <Route path="/shivansh-component" />
+        <Route path="/ketan-component" />
+        
+      </Routes>
+          
+        </Content>
+      </Layout>
+    </Layout>
   );
 }
 

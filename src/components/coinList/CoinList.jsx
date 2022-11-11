@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 // import { BarChart, Bar } from "recharts";
 import axios from 'axios';
+import './Coinlist.css'
 import { Carousel } from 'antd';
 const contentStyle = {
     display:"flex",
@@ -24,19 +25,19 @@ function CoinList() {
   }, []);
   return (
     <div >
-       <Carousel autoplay="true">
+       <Carousel autoplay="true" dots="false">
        {data.map((item) => {
       return (
         
           <div style={contentStyle}>
-            <div style={{display:"flex",justifyContent: "center",
-          alignItems: "center"}}>
-            <img src={item.image} alt="" />
-            <div>
+            <div  style={{display:"flex",justifyContent: "center",
+          alignItems: "center",marginTop:"1%"}}>
+            <img src={item.image} width={50} alt="" />
+            <div className='coinList-details'>
               <p>
-                {item.name}({item.symbol})
+                {item.name}({item.symbol})-{item.current_price} INR
               </p>
-              <p>{item.current_price} INR</p>
+             
             </div>
           
             </div>
