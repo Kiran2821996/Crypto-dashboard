@@ -11,8 +11,9 @@ const { Header, Sider, Content } = Layout;
 
 function App() {
   return (
-    <Layout>
-      <Header>
+    <div  >
+ <Layout className="main">
+      <Header style={{height:"12vh",paddingBottom:"1%"}}>
         <CoinList />
       </Header>
       <Layout>
@@ -31,6 +32,8 @@ function App() {
         </Content>
       </Layout>
     </Layout>
+    </div>
+   
   );
 }
 

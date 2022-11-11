@@ -19,7 +19,7 @@ function News() {
   }, []);
   return (
   
-      <Carousel autoplay="true" dotPosition="right">
+      <Carousel autoplay="true" dotPosition="right" className='caroosel_left'>
       {data.map((item) => {
           return (
             <div className='contentStyle' >
