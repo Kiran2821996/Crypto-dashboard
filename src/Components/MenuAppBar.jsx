@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { SearchContext } from './Contexts/searchContext';
 import { useContext } from 'react';
+import { Button } from '@mui/material';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -89,6 +90,9 @@ export default function SearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <Button variant="contained" > 
+            Search
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>

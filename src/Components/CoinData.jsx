@@ -16,7 +16,7 @@ let [present,setpresent]= useState(false)
     useEffect(()=>{
     async function getdata(){
           var response = await axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin`)
-         console.log(response.data)
+        //  console.log(response.data)
          setCoinData({...response.data})
     }
     getdata()
