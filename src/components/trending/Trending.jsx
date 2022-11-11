@@ -11,9 +11,10 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
 } from "recharts";
 import axios from "axios";
+
+import TrendItems from "./TrendItems";
 
 import "./Trending.css";
 
@@ -25,7 +26,6 @@ function Trending() {
       .get("https://api.coingecko.com/api/v3/search/trending")
       .then((response) => {
         setData([...response.data.coins]);
-        // console.log(...response.data.coins)
       });
   }, []);
   return (
@@ -53,7 +53,7 @@ function Trending() {
             fill="#A8DADC"
           />
         </AreaChart>
-    
+
         <RadarChart
           cx={300}
           cy={250}
@@ -74,35 +74,9 @@ function Trending() {
         </RadarChart>
       </div>
       <div className="trend_block">
-          {data.map((item,idx) => {
-            
-              if(idx%2===0){
-                return( <div className="trend_block_item" >
-                
-                <div>
-                  <p>
-                    {item.item.name}({item.item.symbol})
-                  </p>
-                  <p>{item.item.price_btc.toFixed(15)} BTC</p>
-                </div>
-                <img src={item.item.small} alt="" />
-              </div>)
-               
-              }else{
-                return( <div className="trend_block_item" >
-                <img src={item.item.small} alt="" />
-                <div>
-                  <p>
-                    {item.item.name}({item.item.symbol})
-                  </p>
-                  <p>{item.item.price_btc.toFixed(15)} BTC</p>
-                </div>
-              </div>)
-              }
-              
-          
-          })}
-        </div>
+          <TrendItems data={data}/>
+       
+      </div>
     </div>
   );
 }

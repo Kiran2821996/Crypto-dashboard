@@ -1,7 +1,7 @@
 .nav_link{
     background-color:rgb(69,123,157);
     height: 8vh;
-    
+    padding: 1%;
 }
 
 .nav_link > a{
