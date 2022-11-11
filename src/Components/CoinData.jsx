@@ -1,52 +1,22 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext} from 'react'
 import axios from 'axios'
 
-
-import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { SearchContext } from './Contexts/searchContext';
 
-
-
-
-const ExpandMore = styled((props) => {
-    const { expand, ...other } = props;
-    return <IconButton {...other} />;
-  })(({ theme, expand }) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  }));
 export default function CoinData() {
-
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-      setExpanded(!expanded);
-    };
-
-
-   
+const search = useContext(SearchContext)
+let [present,setpresent]= useState(false)
     const [coinData,setCoinData]= useState({})
     useEffect(()=>{
     async function getdata(){
-        const response = await axios.get("https://api.coingecko.com/api/v3/coins/bitcoin")
-        //  console.log(response.data)
+          var response = await axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin`)
+         console.log(response.data)
          setCoinData({...response.data})
     }
     getdata()
@@ -66,10 +36,12 @@ export default function CoinData() {
     </div>:
     null
         } */}
-        
+
+        {
+         !(Object.keys(coinData).length === 0)?
 <Card sx={{ maxWidth: 345 }}>
       <CardHeader
-        title="Shrimp and Chorizo Paella"
+        title={coinData.name}
         subheader="September 14, 2016"
       />
       <CardMedia
@@ -80,15 +52,19 @@ export default function CoinData() {
       />
       <CardContent>
         <Typography variant="h5" color="black" style={{display:"flex", alignItems:"baseline"}}>
-            Current Price : <Typography varient = "p" color ="red"> $ {coinData.market_data.ath.usd}</Typography>
+            Current Price : <Typography  color ="red"> $ {coinData.market_data.ath.usd}</Typography>
         </Typography>
-        <Typography variant="h5" color="black">
-            Rank : No.  {coinData.market_cap_rank}
+        <Typography variant="h5" color="black" style={{display:"flex", alignItems:"baseline"}}>
+            Rank : No. <Typography color ="red">{coinData.market_cap_rank}</Typography> 
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         </CardActions>
     </Card>
+    :
+
+    null
+}
 </>
   )
 }
