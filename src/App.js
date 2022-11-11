@@ -1,10 +1,11 @@
 import CoinList from "./components/coinList/CoinList";
 import News from "./components/news/News";
 import Trending from "./components/trending/Trending";
-import "./App.css";
 import { Layout } from "antd";
 import { Routes, Route } from "react-router-dom";
 import HeaderNav from "./components/header/HeaderNav";
+
+import "./App.css";
 
 const { Header, Sider, Content } = Layout;
 

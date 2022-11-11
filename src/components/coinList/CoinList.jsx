@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from 'react'
-// import { BarChart, Bar } from "recharts";
 import axios from 'axios';
-import './Coinlist.css'
 import { Carousel } from 'antd';
+
+import './Coinlist.css'
+
+
 const contentStyle = {
     display:"flex",
     height: '60px',

@@ -1,8 +1,8 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
-import './News.css';
 import { Carousel } from 'antd';
 
+import './News.css';
 
 function News() {
   const [data, setData] = useState([]);

@@ -14,6 +14,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import axios from "axios";
+
 import "./Trending.css";
 
 function Trending() {
@@ -73,9 +74,22 @@ function Trending() {
         </RadarChart>
       </div>
       <div className="trend_block">
-          {data.map((item) => {
-            return (
-              <div className="trend_block_item" style={{ display: "flex" }}>
+          {data.map((item,idx) => {
+            
+              if(idx%2===0){
+                return( <div className="trend_block_item" >
+                
+                <div>
+                  <p>
+                    {item.item.name}({item.item.symbol})
+                  </p>
+                  <p>{item.item.price_btc.toFixed(15)} BTC</p>
+                </div>
+                <img src={item.item.small} alt="" />
+              </div>)
+               
+              }else{
+                return( <div className="trend_block_item" >
                 <img src={item.item.small} alt="" />
                 <div>
                   <p>
@@ -83,8 +97,10 @@ function Trending() {
                   </p>
                   <p>{item.item.price_btc.toFixed(15)} BTC</p>
                 </div>
-              </div>
-            );
+              </div>)
+              }
+              
+          
           })}
         </div>
     </div>

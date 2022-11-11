@@ -11,4 +11,16 @@
 
 .trend_block_item{
 display: flex;
+justify-content: space-around;
+align-items: center;
+background-color:#e6394790 ;
+border: 5px solid rgba(0, 21, 41, 0.637);
+margin: 2%;
 }
+.trend_block{
+    
+    width:100%;
+    
+}
+
+
