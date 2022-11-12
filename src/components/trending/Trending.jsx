@@ -74,8 +74,7 @@ function Trending() {
         </RadarChart>
       </div>
       <div className="trend_block">
-          <TrendItems data={data}/>
-       
+        <TrendItems data={data} />
       </div>
     </div>
   );
