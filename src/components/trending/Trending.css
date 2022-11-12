@@ -4,6 +4,7 @@
   padding: 2% 0% 2% 2%;
   height: 80vh;
   overflow-y: scroll;
+ 
 }
 .trend_chart {
   display: "flex";
@@ -42,6 +43,12 @@
   z-index: 999;
   width:50%;
   height: 60%;
-  background-color: blue;
+  background-color:  rgba(0, 21, 41, 0.989);
  color: black;
+
+ 
+ 
+}
+.pop_screen h1{
+  color: white;
 }
