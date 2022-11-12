@@ -1,0 +1,20 @@
+/* .site-card-border-less-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+body{
+    background-color:#f1faee;
+}
+
+
+.input_select{
+    display: flex;
+}
+
+.convertBtn{
+    background-color: #1d3557;
+    color: #f1faee;
+}
