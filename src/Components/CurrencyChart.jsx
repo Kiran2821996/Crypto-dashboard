@@ -12,7 +12,7 @@ export default function CurrencyChart() {
     let {search, setSearch}= useContext(SearchContext)
 useEffect(()=>{
   async function getdata(){
-   const response = await axios.get(`https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=20&interval=daily`)
+   const response = await axios.get(`https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=10&interval=daily`)
    setdata(response.data.prices)
   }
   getdata()
@@ -25,6 +25,9 @@ let objectData = data.map(function(x){
     day : date
     ,value:x[1]
   }
+})
+objectData.sort((a,b)=>{
+return a.day-b.day
 })
 
     return (
@@ -49,5 +52,7 @@ let objectData = data.map(function(x){
   <Area type="monotone" dataKey="value" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
 </AreaChart>
         </>
+
+
        )
 }
