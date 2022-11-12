@@ -1,16 +1,20 @@
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
+import { SearchContext } from './Contexts/searchContext';
+
 export default function CurrencyChart() {
     let [data,setdata]=useState([])
+    let {search, setSearch}= useContext(SearchContext)
 useEffect(()=>{
   async function getdata(){
-   const response = await axios.get("https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=20&interval=daily")
+   const response = await axios.get(`https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=20&interval=daily`)
    setdata(response.data.prices)
+   console.log(search,"Coming from currency chart")
   }
   getdata()
-},[])
+},[search])
 
 let objectData = data.map(function(x){
     var a = new Date(x[0] * 1000);
@@ -22,14 +26,6 @@ let objectData = data.map(function(x){
 })
 
     return (
-    //     <>
-    //     <LineChart width={600} height={400} data={objectData} activeDot={false} >
-    //      <XAxis dataKey="time"/>
-    //      <YAxis dataKey="value"/>
-    //      <CartesianGrid stroke="white" strokeDasharray="5 5"/>
-    //      <Line  dataKey="value" stroke="purple" />
-    //    </LineChart>
-    //     </>
         <>
         <AreaChart width={730} height={450} data={objectData}
   margin={{ top: 100, right: 10, left: 30, bottom: 0 }}>

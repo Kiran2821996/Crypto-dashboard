@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext} from 'react'
 import axios from 'axios'
+import { SearchContext } from './Contexts/searchContext';
 
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -7,35 +8,20 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import { SearchContext } from './Contexts/searchContext';
 
 export default function CoinData() {
-const search = useContext(SearchContext)
-let [present,setpresent]= useState(false)
+const {search,setSearch} = useContext(SearchContext)
     const [coinData,setCoinData]= useState({})
     useEffect(()=>{
     async function getdata(){
-          var response = await axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin`)
-        //  console.log(response.data)
+          var response = await axios.get(`https://api.coingecko.com/api/v3/coins/${search}`)
          setCoinData({...response.data})
     }
     getdata()
 
-},[])
+},[search])
   return (
   <>
-    {/* {
-        // console.log(!coinData==={})
-        // console.log(Object.keys(coinData).length === 0)
-        !(Object.keys(coinData).length === 0)?
-    <div>
-            <p>{coinData.name}</p>
-             <img src= {coinData.image.large} alt="Not Found"/>
-             <p>Current price of 1 bitcoin is &nbsp; $ {coinData.market_data.ath.usd}</p>
-             <p>Rank in crypto Market : &nbsp; No.{coinData.market_cap_rank}</p>
-    </div>:
-    null
-        } */}
 
         {
          !(Object.keys(coinData).length === 0)?
