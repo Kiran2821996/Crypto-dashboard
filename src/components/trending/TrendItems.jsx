@@ -5,7 +5,7 @@ function TrendItems({ data }) {
     <div>
       {data.map((item, idx) => {
         return (
-          <div className="trend_block_item" key={idx}>
+          <div className="trend_block_item" key={idx} onClick>
             <img src={item.item.small} alt="bit-coin-img" />
             <div>
               <p>
