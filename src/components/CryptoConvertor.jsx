@@ -9,6 +9,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { ExchangeRate } from "./ExchangeRate";
+import { CryptoNews } from "./CryptoNews";
 
 export function CryptoConvertor() {
   const currencies = ["BTC", "ETH", "USD","INR", "XRP", "LTC", "ADA"];
@@ -127,8 +128,14 @@ export function CryptoConvertor() {
       <Button variant="contained"
        sx={{ backgroundColor:"#1d3557",color:"#f1faee"}}
          onClick={handleConvert}>Convert</Button>
-
-         <ExchangeRate exchangeRate={exchangeRate}/>
+        <div>
+        <ExchangeRate
+         exchangeRate={exchangeRate}
+         primaryCurrency={primaryCurrency}
+         secondarycurrency={secondaryCurrency}/>
+        </div>
+        <CryptoNews/>
+         
     </>
   );
 }
