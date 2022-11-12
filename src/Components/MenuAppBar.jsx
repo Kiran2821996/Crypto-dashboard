@@ -1,4 +1,8 @@
 import * as React from "react";
+
+import { SearchContext } from "./Contexts/searchContext";
+import { useContext } from "react";
+
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -8,8 +12,6 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import { SearchContext } from "./Contexts/searchContext";
-import { useContext } from "react";
 import { Button } from "@mui/material";
 
 const Search = styled("div")(({ theme }) => ({
@@ -57,7 +59,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
   let [value, setvalue] = React.useState("");
   const { search, setSearch } = useContext(SearchContext);
-  console.log(search, value);
+
+  const searchFunction =()=>{
+    setSearch(value)
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -92,7 +97,7 @@ export default function SearchAppBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          <Button variant="contained" onClick={() => setSearch(value)}>
+          <Button variant="contained" onClick={searchFunction}>
             Search
           </Button>
         </Toolbar>

@@ -1,8 +1,11 @@
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
+
 import { SearchContext } from './Contexts/searchContext';
+
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
 
 export default function CurrencyChart() {
     let [data,setdata]=useState([])
@@ -11,7 +14,6 @@ useEffect(()=>{
   async function getdata(){
    const response = await axios.get(`https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=20&interval=daily`)
    setdata(response.data.prices)
-   console.log(search,"Coming from currency chart")
   }
   getdata()
 },[search])
