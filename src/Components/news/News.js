@@ -4,7 +4,7 @@ import { Carousel } from "antd";
 
 import "./News.css";
 
-function News() {
+const News=()=>{
   const [data, setData] = useState([]);
 
   useEffect(() => {

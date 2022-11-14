@@ -1,12 +1,13 @@
 import { Layout } from "antd";
 import { Routes, Route } from "react-router-dom";
 
-import CoinList from "./components/coinList/CoinList";
-import News from "./components/news/News";
-import Trending from "./components/trending/Trending";
-import HeaderNav from "./components/header/HeaderNav";
 
 import "./App.css";
+import MainPage from "./Components/MainPage";
+import CoinList from "./Components/coinList/CoinList";
+import News from "./Components/news/News";
+import Trending from "./Components/trending/Trending";
+import HeaderNav from "./Components/header/HeaderNav";
 
 const { Header, Sider, Content } = Layout;
 
@@ -24,8 +25,8 @@ function App() {
           <Content>
             <HeaderNav />
             <Routes>
-              <Route path="/" element={<Trending />} />
-              <Route path="/search-a-coin" />
+              <Route path="/" element={<Trending/>} />
+              <Route path="/search-a-coin" element={ <MainPage/>} />
               <Route path="/coin-convertor" />
             </Routes>
           </Content>
