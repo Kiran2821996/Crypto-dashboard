@@ -1,15 +1,13 @@
-import { useState, useEffect, useContext } from "react";
-import axios from "axios";
-
-import { SearchContext } from "./Contexts/searchContext";
-
-import Backdrop from "@mui/material/Backdrop";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
+
+import { useState, useEffect, useContext } from "react";
+import axios from "axios";
+import { SearchContext } from "./Contexts/searchContext";
 
 export default function CoinData() {
   const { search, setSearch } = useContext(SearchContext);

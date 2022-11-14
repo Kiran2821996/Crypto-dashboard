@@ -1,9 +1,3 @@
-import React from "react";
-import { useState, useEffect, useContext } from "react";
-import axios from "axios";
-
-import { SearchContext } from "./Contexts/searchContext";
-
 import {
   AreaChart,
   Area,
@@ -12,6 +6,11 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+
+import React from "react";
+import { useState, useEffect, useContext } from "react";
+import axios from "axios";
+import { SearchContext } from "./Contexts/searchContext";
 
 export default function CurrencyChart() {
   let [data, setdata] = useState([]);
