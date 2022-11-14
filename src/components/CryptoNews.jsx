@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "./css/CryptoNews.css";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./css/CryptoNews.css";
+
 export function CryptoNews() {
   const [newsArticle, setNewsArticle] = useState(null);
+  const [url, setUrl] = useState(
+    "https://crypto-news-live3.p.rapidapi.com/news"
+  );
 
   useEffect(() => {
     const options = {
       method: "GET",
-      url: "https://crypto-news-live3.p.rapidapi.com/news",
+      // url: "https://crypto-news-live3.p.rapidapi.com/news",
+      url: url,
       headers: {
         "X-RapidAPI-Key": "5880e8a812msh9940b0966e5ae28p1931d5jsn669cb51ffb1c",
         "X-RapidAPI-Host": "crypto-news-live3.p.rapidapi.com",
@@ -23,15 +28,12 @@ export function CryptoNews() {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
         setNewsArticle(response.data);
       })
       .catch(function (error) {
         console.error(error);
       });
   }, []);
-
-  console.log(newsArticle);
 
   return (
     <>
@@ -40,7 +42,13 @@ export function CryptoNews() {
         <div className="newsTitleCard">
           {newsArticle?.map((item, index) => {
             return (
-              <Card sx={{ maxWidth: 275, margin: "20px",backgroundColor:"#a8dadc" }}>
+              <Card
+                sx={{
+                  maxWidth: 275,
+                  margin: "20px",
+                  backgroundColor: "#a8dadc",
+                }}
+              >
                 <CardContent>
                   <Typography
                     sx={{ fontSize: 14 }}

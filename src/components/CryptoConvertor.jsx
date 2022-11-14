@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Card } from "antd";
-import "./css/CryptoConvertor.css";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { Card } from "antd";
+
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { ExchangeRate } from "./ExchangeRate";
 import { CryptoNews } from "./CryptoNews";
+
+import "./css/CryptoConvertor.css";
 
 export function CryptoConvertor() {
   const currencies = ["BTC", "ETH", "USD","INR", "XRP", "LTC", "ADA"];
@@ -18,11 +20,12 @@ export function CryptoConvertor() {
   const [amount, setAmount] = useState(1);
   const [result, setResult] = useState(0);
   const [exchangeRate, setExchangeRate] = useState(0);
+  const [url,setUrl]=useState("https://alpha-vantage.p.rapidapi.com/query")
 
     const handleConvert = () => {
       const options = {
         method: "GET",
-        url: "https://alpha-vantage.p.rapidapi.com/query",
+        url:url,
         params: {
           from_currency: "BTC",
           function: "CURRENCY_EXCHANGE_RATE",
@@ -37,9 +40,6 @@ export function CryptoConvertor() {
       axios
         .request(options)
         .then(function (response) {
-          console.log(
-            response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
-          );
           setExchangeRate(
             response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
           );
@@ -53,18 +53,6 @@ export function CryptoConvertor() {
         });
     };
 
-    console.log(exchangeRate);
-
-//   useEffect(() => {
-//     async function getData() {
-//       const response = await axios.get(`
-//         https://alpha-vantage.p.rapidapi.com/query`);
-//       console.log(
-//         response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
-//       );
-//     }
-//     getData();
-//   }, [Button]);
 
   return (
     <>
