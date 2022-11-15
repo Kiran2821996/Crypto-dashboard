@@ -32,7 +32,7 @@ function Trending() {
     <div className="trending">
       <div className="trend_chart">
         <AreaChart
-          width={800}
+          width={700}
           height={300}
           data={data}
           margin={{

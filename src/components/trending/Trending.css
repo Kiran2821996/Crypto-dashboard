@@ -3,14 +3,19 @@
   display: flex;
   padding: 2% 0% 2% 2%;
   height: 80vh;
-  overflow-y: scroll;
+  width: 100%;
+  overflow: auto;
  
+}
+.trending img{
+  margin: 1%;
 }
 .trend_chart {
   display: "flex";
   justify-content: "center";
   align-items: "center";
   flex-direction: "column";
+  width: 70%;
 }
 
 .trend_block_item {
@@ -21,13 +26,13 @@
   border: 2px solid rgba(0, 21, 41, 0.637);
   margin: 6% 0;
   border-radius: 10px;
-  width: 90%;
+  /* width: 90%; */
   padding: 3% 0 1% 1%;
 }
 .trend_block {
   margin-top: 5%;
   margin-left: 5%;
-  width: 100%;
+  width: 30%;
   text-align: center;
 }
 
@@ -35,20 +40,9 @@
   cursor: pointer;
 }
 
-.pop_screen{
- 
-  position: absolute;
-  top: 25%;
-  right: 25%;
-  z-index: 999;
-  width:50%;
-  height: 60%;
-  background-color:  rgba(0, 21, 41, 0.989);
- color: black;
 
- 
- 
-}
-.pop_screen h1{
-  color: white;
+.average_interval{
+  position: absolute;
+  top: 10;
+  right: 3%;
 }
