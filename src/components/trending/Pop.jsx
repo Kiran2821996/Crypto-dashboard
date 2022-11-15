@@ -29,6 +29,8 @@ function Pop({ dataClick, dataShow, modal2Open, setModal2Open, data,setInterval 
     setModal2Open(false)
   }
 
+  
+
   return (
     <Modal
       centered
@@ -36,6 +38,7 @@ function Pop({ dataClick, dataShow, modal2Open, setModal2Open, data,setInterval 
       footer={null}
       onCancel={handleCancel}
     >
+        
       {data?.map((item) => {
         return (
           item.item.id === dataClick && (

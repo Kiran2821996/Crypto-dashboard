@@ -24,6 +24,7 @@ function TrendItems({ data }) {
 
   return (
     <div>
+      <h2 className="recommends">coinSmartly Recommends</h2>
       {data.map((item, idx) => {
         return (
           <div
