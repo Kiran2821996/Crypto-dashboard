@@ -1,3 +1,4 @@
+import {useState, useContext } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -7,10 +8,7 @@ import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
 
-import * as React from "react";
-import { useContext } from "react";
 import { SearchContext } from "../Contexts/searchContext";
-
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -55,12 +53,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
-  let [value, setvalue] = React.useState("");
+  let [value, setValue] = useState("");
   const { search, setSearch } = useContext(SearchContext);
 
-  const searchFunction = () => {
-    setSearch(value);
-  };
+  const searchFunction = () =>  setSearch(value);
+  
+  const handleChange = (e)=> setValue(e.target.value);
+  
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ backgroundColor: "#1D3557" }}>
@@ -78,9 +78,9 @@ export default function SearchAppBar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              onChange={(e) => {
-                setvalue(e.target.value);
-              }}
+              onChange={
+               handleChange
+              }
               value={value}
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
