@@ -6,7 +6,7 @@ import Pop from "./Pop";
 function TrendItems({ data }) {
   const [dataShow, setDataShow] = useState([]);
   const [dataClick, setdataClick] = useState();
-  const [interval,setInterval] =useState(10)
+  const [interval, setInterval] = useState(10);
   const [modal2Open, setModal2Open] = useState(false);
 
   useEffect(() => {
@@ -15,10 +15,11 @@ function TrendItems({ data }) {
         `https://api.coingecko.com/api/v3/coins/${dataClick}/market_chart?vs_currency=inr&days=${interval}&interval=daily`
       )
       .then((res) => setDataShow([...res.data.prices]));
-  }, [dataClick,interval]);
+  }, [dataClick, interval]);
 
   const handleClick = (item) => {
     setdataClick(item);
+    setModal2Open(true);
   };
 
   return (
@@ -28,10 +29,7 @@ function TrendItems({ data }) {
           <div
             className="trend_block_item"
             key={idx}
-            onClick={(e) => {
-              handleClick(item.item.id);
-              setModal2Open(true);
-            }}
+            onClick={(e) => handleClick(item.item.id)}
           >
             <img src={item.item.small} alt="bit-coin-img" />
             <div>

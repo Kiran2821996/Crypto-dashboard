@@ -4,10 +4,8 @@ import {
   Area,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
 } from "recharts";
 import { Modal } from "antd";
 
@@ -27,12 +25,16 @@ function Pop({ dataClick, dataShow, modal2Open, setModal2Open, data,setInterval 
     return a.day - b.day;
   });
 
+  const handleCancel=()=>{
+    setModal2Open(false)
+  }
+
   return (
     <Modal
       centered
-      visible={modal2Open}
+      open={modal2Open}
       footer={null}
-      onCancel={() => setModal2Open(false)}
+      onCancel={handleCancel}
     >
       {data?.map((item) => {
         return (
