@@ -1,3 +1,5 @@
+import React from "react";
+import { useState, useEffect, useContext } from "react";
 import {
   AreaChart,
   Area,
@@ -6,13 +8,10 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-
-import React from "react";
-import { useState, useEffect, useContext } from "react";
+import Typography from "@mui/material/Typography";
 import axios from "axios";
-import { SearchContext } from "../Contexts/searchContext";
 
-import "../CSS/CurrencyChart.css";
+import { SearchContext } from "../Contexts/searchContext";
 
 export default function CurrencyChart() {
   let [data, setdata] = useState([]);
@@ -20,6 +19,7 @@ export default function CurrencyChart() {
   let [api, setApi] = useState(
     `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=10&interval=daily`
   );
+
   useEffect(() => {
     async function getdata() {
       const response = await axios.get(api);
@@ -36,17 +36,26 @@ export default function CurrencyChart() {
       value: x[1],
     };
   });
+
   objectData.sort((a, b) => {
     return a.day - b.day;
   });
 
   return (
     <div className="CurrencyChart">
+      <Typography
+        variant="subtitle1"
+        gutterBottom
+        style={{ marginLeft: "12%", marginTop: "1%", marginBottom: "0", color:"#364d79" }}
+      >
+        History Chart shows performance of crypto value by days for the past
+        month in USD.
+      </Typography>
       <AreaChart
         width={650}
-        height={450}
+        height={400}
         data={objectData}
-        margin={{ top: 100, right: 10, left: 30, bottom: 0 }}
+        margin={{ top: 30, right: 10, left: 30, bottom: 0 }}
       >
         <defs>
           <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

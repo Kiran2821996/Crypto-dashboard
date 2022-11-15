@@ -30,14 +30,15 @@ export default function CoinData() {
     market_cap_rank,
     sentiment_votes_up_percentage,
   } = coinData;
+
   return (
     <>
       {!(Object.keys(coinData).length === 0) ? (
         <Card
           sx={{ maxWidth: 450 }}
-          style={{ backgroundColor: "rgb(241, 250, 238)" }}
+          style={{ backgroundColor: "rgb(241, 250, 238)" , width:"25vw"}}
         >
-          <CardHeader title={name} subheader="September 14, 2016" />
+          <CardHeader title={name} subheader="October 29 2022" />
           <CardMedia
             component="img"
             height="auto"
@@ -46,37 +47,37 @@ export default function CoinData() {
           />
           <CardContent>
             <Typography
-              variant="h5"
+              variant="h6"
               color="black"
               style={{ display: "flex", alignItems: "baseline" }}
             >
-              Current Price :{" "}
-              <Typography color="red"> $ {market_data.ath.usd}</Typography>
+              Current Price :
+              <Typography  variant="h6" color="red"> ${market_data.ath.usd}</Typography>
             </Typography>
             <Typography
-              variant="h5"
+              variant="h6"
               color="black"
               style={{ display: "flex", alignItems: "baseline" }}
             >
-              Rank : No. <Typography color="red">{market_cap_rank}</Typography>
+              Rank : No.&nbsp;  <Typography variant="h6" color="red">{market_cap_rank}</Typography>
             </Typography>
             <Typography
-              variant="h5"
+              variant="h6"
               color="black"
               style={{ display: "flex", alignItems: "baseline" }}
             >
-              Market upvote &nbsp;{" "}
+              Market upvote: &nbsp;
               <Typography color="red">
                 {sentiment_votes_up_percentage}%
               </Typography>
             </Typography>
             <Typography
-              variant="h5"
+              variant="h6"
               color="black"
               style={{ display: "flex", alignItems: "baseline" }}
             >
-              Market Volume &nbsp;{" "}
-              <Typography color="red">{coinData.tickers[0].volume}</Typography>
+             Volume:  &nbsp; 
+              <Typography variant="h6" color="red">{coinData.tickers[0].volume.toFixed(2)}</Typography>
             </Typography>
           </CardContent>
           <CardActions disableSpacing></CardActions>
