@@ -12,17 +12,17 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { SearchContext } from "../Contexts/searchContext";
 
-import '../CSS/CurrencyChart.css'
+import "../CSS/CurrencyChart.css";
 
 export default function CurrencyChart() {
   let [data, setdata] = useState([]);
   let { search, setSearch } = useContext(SearchContext);
-  let [api,setApi] = useState(`https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=10&interval=daily`)
+  let [api, setApi] = useState(
+    `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=10&interval=daily`
+  );
   useEffect(() => {
     async function getdata() {
-      const response = await axios.get(
-       api
-      );
+      const response = await axios.get(api);
       setdata(response.data.prices);
     }
     getdata();
@@ -59,7 +59,7 @@ export default function CurrencyChart() {
           </linearGradient>
         </defs>
         <XAxis dataKey="day" />
-        <YAxis dataKey="value"/>
+        <YAxis dataKey="value" />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Area

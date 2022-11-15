@@ -1,4 +1,4 @@
-import {useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -56,10 +56,9 @@ export default function SearchAppBar() {
   let [value, setValue] = useState("");
   const { search, setSearch } = useContext(SearchContext);
 
-  const searchFunction = () =>  setSearch(value);
-  
-  const handleChange = (e)=> setValue(e.target.value);
-  
+  const searchFunction = () => setSearch(value);
+
+  const handleChange = (e) => setValue(e.target.value);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -78,9 +77,7 @@ export default function SearchAppBar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              onChange={
-               handleChange
-              }
+              onChange={handleChange}
               value={value}
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
