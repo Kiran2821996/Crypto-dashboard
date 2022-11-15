@@ -13,7 +13,7 @@ const contentStyle = {
   background: "#364d79",
 };
 
-function CoinList() {
+const CoinList = ()=>{
   const [data, setData] = useState([]);
 
   useEffect(() => {

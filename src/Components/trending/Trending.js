@@ -18,7 +18,7 @@ import TrendItems from "./TrendItems";
 
 import "./Trending.css";
 
-function Trending() {
+const Trending= ()=>{
   const [data, setData] = useState([]);
 
   useEffect(() => {

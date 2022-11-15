@@ -1,0 +1,8 @@
+.ChartnCoin{
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+.MainPage{
+    background-color: rgb(241, 250, 238);
+}
