@@ -30,7 +30,6 @@ export default function CoinData() {
     market_cap_rank,
     sentiment_votes_up_percentage,
   } = coinData;
-  console.log(name, image, market_data);
   return (
     <>
       {!(Object.keys(coinData).length === 0) ? (
