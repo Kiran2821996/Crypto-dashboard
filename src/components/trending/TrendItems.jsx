@@ -47,7 +47,7 @@ function TrendItems({ data }) {
         setModal2Open={setModal2Open}
         dataShow={dataShow}
         dataClick={dataClick}
-        data={data}
+        data={data.item}
         setInterval={setInterval}
       />
     </div>
