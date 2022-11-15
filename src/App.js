@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 
 import "./App.css";
-import MainPage from "./Components/MainPage";
+import MainPage from "./Components/CoinHistoryAndData/MainPage";
 import CoinList from "./Components/coinList/CoinList";
 import News from "./Components/news/News";
 import Trending from "./Components/trending/Trending";

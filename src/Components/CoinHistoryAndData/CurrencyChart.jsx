@@ -10,15 +10,18 @@ import {
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { SearchContext } from "./Contexts/searchContext";
+import { SearchContext } from "../Contexts/searchContext";
+
+import '../CSS/CurrencyChart.css'
 
 export default function CurrencyChart() {
   let [data, setdata] = useState([]);
   let { search, setSearch } = useContext(SearchContext);
+  let [api,setApi] = useState(`https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=10&interval=daily`)
   useEffect(() => {
     async function getdata() {
       const response = await axios.get(
-        `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=10&interval=daily`
+       api
       );
       setdata(response.data.prices);
     }
@@ -38,9 +41,9 @@ export default function CurrencyChart() {
   });
 
   return (
-    <>
+    <div className="CurrencyChart">
       <AreaChart
-        width={730}
+        width={650}
         height={450}
         data={objectData}
         margin={{ top: 100, right: 10, left: 30, bottom: 0 }}
@@ -55,8 +58,8 @@ export default function CurrencyChart() {
             <stop offset="95%" stopColor="#16c1db" stopOpacity={0} />
           </linearGradient>
         </defs>
-        <XAxis dataKey="name" />
-        <YAxis />
+        <XAxis dataKey="day" />
+        <YAxis dataKey="value"/>
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Area
@@ -74,6 +77,6 @@ export default function CurrencyChart() {
           fill="url(#colorPv)"
         />
       </AreaChart>
-    </>
+    </div>
   );
 }

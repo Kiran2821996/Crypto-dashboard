@@ -3,16 +3,16 @@ import CoinData from "./CoinData";
 import CurrencyChart from "./CurrencyChart";
 import MenuAppBar from "./MenuAppBar";
 
-import "./CSS/MainPage.css";
+import "../CSS/MainPage.css"
 
 export default function MainPage() {
   return (
-    <>
+    <div className="MainPage">
       <MenuAppBar />
       <div className="ChartnCoin">
-        <CoinData className="Se" />
+        <CoinData  />
         <CurrencyChart />
       </div>
-    </>
+    </div>
   );
 }

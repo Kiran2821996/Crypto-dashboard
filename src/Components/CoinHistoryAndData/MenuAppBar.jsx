@@ -8,8 +8,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "@mui/material";
 
 import * as React from "react";
-import { SearchContext } from "./Contexts/searchContext";
 import { useContext } from "react";
+import { SearchContext } from "../Contexts/searchContext";
 
 
 const Search = styled("div")(({ theme }) => ({

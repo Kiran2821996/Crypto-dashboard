@@ -6,7 +6,7 @@ const SearchContext = createContext();
     const [search, setSearch] = useState("bitcoin");
     
     return (
-        <SearchContext.Provider value={{ search, setSearch  }}>
+        <SearchContext.Provider value={{ search, setSearch }}>
             {children}
         </SearchContext.Provider>
     );
