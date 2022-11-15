@@ -1,13 +1,13 @@
 import { Layout } from "antd";
 import { Routes, Route } from "react-router-dom";
 
-
-import "./App.css";
 import MainPage from "./Components/CoinHistoryAndData/MainPage";
 import CoinList from "./Components/coinList/CoinList";
 import News from "./Components/news/News";
 import Trending from "./Components/trending/Trending";
 import HeaderNav from "./Components/header/HeaderNav";
+
+import "./App.css";
 
 const { Header, Sider, Content } = Layout;
 
