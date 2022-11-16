@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { SearchProvider } from './Components/Contexts/searchContext';
+import { SearchProvider } from './components/Contexts/searchContext';
 import 'antd/dist/antd.css';
 import { BrowserRouter } from "react-router-dom";
 
