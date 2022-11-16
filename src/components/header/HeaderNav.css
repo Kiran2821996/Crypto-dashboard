@@ -13,10 +13,10 @@
     font-weight: bolder;
 }
 .nav_link > a:hover{
-    color: rgb(141, 251, 255);
+    /* color: rgb(141, 251, 255); */
 }
 .nav_link > a.active{
-    color: rgb(149, 239, 255);
+    /* color: rgb(149, 239, 255); */
    
 }
 .inputField{
@@ -36,7 +36,7 @@
     font-weight: 600;
     color: black;
     padding:0.2rem 1rem .2rem 1rem;
-    background-color: #c5e0d3;
+    background-color: inherit;
     margin-left: 1.5rem
 }
 .searchBtn:hover{
