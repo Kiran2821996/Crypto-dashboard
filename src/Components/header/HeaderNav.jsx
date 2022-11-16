@@ -23,7 +23,8 @@ function HeaderNav() {
   const handleHideSearch = () => setShowSearch(true);
 
   return (
-    <div className="nav_link">
+    <div>
+      <div className="nav_link">
       <NavLink to={"/"} end>
         <h3 onClick={handleHideSearch}>TRENDS @ TOP 7</h3>
       </NavLink>
@@ -43,7 +44,7 @@ function HeaderNav() {
         defaultValue= {value}
          onChange={handleChange}
       />
-      <Button type="primary" onClick={searchFunction}>Submit</Button>
+      <Button  style={{backgroundColor:" #1D3557", color :"white"}} onClick={searchFunction}>Submit</Button>
     </Input.Group>
 
         </NavLink>
@@ -53,7 +54,13 @@ function HeaderNav() {
       <NavLink to={"/coin-convertor"}>
         <h3 onClick={handleHideSearch}>Coin Converter</h3>
       </NavLink>
+     
     </div>
+    <div className="logo">
+       <img  src="./861bac90cbe64151929e1d382c2b0a52.png" alt="Logo" />
+    </div>
+    </div>
+    
   );
 }
 

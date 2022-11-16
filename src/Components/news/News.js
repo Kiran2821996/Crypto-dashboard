@@ -10,7 +10,7 @@ const News=()=>{
   useEffect(() => {
     axios
       .get(
-        "https://newsapi.org/v2/everything?q=crypto&from=2022-10-11&sortBy=publishedAt&apiKey=72635734611e40d5b63c90dc5248f92b"
+        "https://newsapi.org/v2/everything?q=crypto&from=2022-11-14&to=2022-11-14&sortBy=popularity&apiKey=72635734611e40d5b63c90dc5248f92b"
       )
       .then((response) => {
         setData([...response.data.articles]);

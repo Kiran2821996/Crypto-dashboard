@@ -39,7 +39,8 @@ export default function CoinData() {
           style={{ backgroundColor: "rgb(241, 250, 238)" , width:"25vw"}}
         >
           <CardHeader title={name} subheader="October 29 2022" />
-          <CardMedia
+          <CardMedia 
+          style={{width:"200px"}}
             component="img"
             height="auto"
             image={image.large}

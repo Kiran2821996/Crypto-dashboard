@@ -36,7 +36,6 @@ export default function CurrencyChart() {
   }, [search, currency]);
 
   const handleCurrency = (e) => {
-    console.log(e.target.value);
     setCurrency(e.target.value);
     setApi(`https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=${currency}&days=10&interval=daily`)
   };

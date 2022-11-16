@@ -44,3 +44,8 @@
     transition: 0.3s;
     cursor: pointer;
 }
+.logo{
+    position: absolute;
+    top:0;
+    left:0;
+}
