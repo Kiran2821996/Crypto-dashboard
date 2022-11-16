@@ -39,16 +39,16 @@ function Pop({ dataClick, dataShow, modal2Open, setModal2Open, data,setInterval 
       onCancel={handleCancel}
     >
         
-      {data?.map(({id,small,symbol,name,price_btc}) => {
+      {data?.map((item) => {
         return (
-          id === dataClick && (
+         item.item.id === dataClick && (
             <div>
-              <img src={small} alt="bit-coin-img" />{" "}
+              <img src={item.item.small} alt="bit-coin-img" />{" "}
               <span>
-                {name}({symbol})
+                {item.item.name}({item.item.symbol})
               </span>
               ____
-              <span>{price_btc.toFixed(15)} BTC</span>
+              <span>{item.item.price_btc.toFixed(15)} BTC</span>
             </div>
           )
         );

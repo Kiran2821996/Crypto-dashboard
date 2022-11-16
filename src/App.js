@@ -1,11 +1,11 @@
 import { Layout } from "antd";
 import { Routes, Route } from "react-router-dom";
 
-import MainPage from "./Components/CoinHistoryAndData/MainPage";
-import CoinList from "./Components/coinList/CoinList";
-import News from "./Components/news/News";
-import Trending from "./Components/trending/Trending";
-import HeaderNav from "./Components/header/HeaderNav";
+import MainPage from "./components/CoinHistoryAndData/MainPage";
+import CoinList from "./components/coinList/CoinList";
+import News from "./components/news/News";
+import Trending from "./components/trending/Trending";
+import HeaderNav from "./components/header/HeaderNav";
 
 import "./App.css";
 
