@@ -25,7 +25,8 @@ function TrendItems({ data }) {
   return (
     <div>
       <h2 className="recommends">coinSmartly Recommends</h2>
-      {data.map((item, idx) => {
+    <div className="trendmap_block" >
+    {data.map((item, idx) => {
         return (
           <div
             className="trend_block_item"
@@ -42,6 +43,8 @@ function TrendItems({ data }) {
           </div>
         );
       })}
+    </div>
+      
       <Pop
         modal2Open={modal2Open}
         setModal2Open={setModal2Open}

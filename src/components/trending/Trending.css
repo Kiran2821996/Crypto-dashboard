@@ -37,7 +37,7 @@
 
 .trend_block_item:hover {
   cursor: pointer;
-  background-color:white;
+  background-color: white;
   border: 2px solid rgba(1, 72, 138, 0.637);
 }
 
@@ -45,7 +45,7 @@
   margin-bottom: 5%;
 }
 .radar_Chart {
-  margin-left: 20%;
+  margin-left: 10%;
 }
 .recommends {
   margin-right: 20%;
@@ -54,4 +54,50 @@
   position: absolute;
   top: 10;
   right: 3%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .trending {
+    flex-direction: column-reverse;
+  }
+  .trend_block {
+    width: 100%;
+    margin: 0;
+  }
+  .trendmap_block {
+    overflow-y: auto;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  .radar_Chart {
+    margin-left: 10%;
+  }
+  .trend_chart {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .trend_chart h2 {
+   margin-top: 5%;
+  }
+  .recommends {
+    margin-right: 0;
+    text-align: center;
+  }
+  .trend_block_item {
+    width: 30%;
+    flex-direction: column;
+    margin: 1%;
+    padding: 1%;
+  }
+  .area_chart {
+    margin-left: 8%;
+    text-align: center;
+  }
+  .radar_Chart {
+    margin-left: 16%;
+   text-align: center;
+  }
 }
