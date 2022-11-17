@@ -11,7 +11,7 @@ import "./HeaderNav.css";
 function HeaderNav() {
   let [value, setValue] = useState("");
   const { search, setSearch } = useContext(SearchContext);
-  
+
   const [showSearch, setShowSearch] = useState(true);
 
   const searchFunction = () => setSearch(value);
@@ -25,42 +25,45 @@ function HeaderNav() {
   return (
     <div>
       <div className="nav_link">
-      <NavLink to={"/"} end>
-        <h3 onClick={handleHideSearch}>TRENDS @ TOP 7</h3>
-      </NavLink>
-      {"---------------"}
-      {showSearch ? (
-        <NavLink to={"/search-a-coin"}>
-          {" "}
-          <h3 onClick={handleShowSearch}>Search a Coin</h3>
+        <NavLink to={"/"} end>
+          <h3 onClick={handleHideSearch}>TRENDS @ TOP 7</h3>
         </NavLink>
-      ) : (
-        <NavLink to={"/search-a-coin"}>
-        <Input.Group compact>
-      <Input
-        style={{
-          width: '20rem',
-        }}
-        defaultValue= {value}
-         onChange={handleChange}
-      />
-      <Button  style={{backgroundColor:" #1D3557", color :"white"}} onClick={searchFunction}>Submit</Button>
-    </Input.Group>
+        {"---------------"}
+        {showSearch ? (
+          <NavLink to={"/search-a-coin"}>
+            {" "}
+            <h3 onClick={handleShowSearch}>Search a Coin</h3>
+          </NavLink>
+        ) : (
+          <NavLink to={"/search-a-coin"}>
+            <Input.Group compact>
+              <Input
+                style={{
+                  width: "20rem",
+                }}
+                placeholder ="Search your favourite crypto currency....."
+                defaultValue={value}
+                onChange={handleChange}
+              />
+              <Button
+                style={{ backgroundColor: " #1D3557", color: "white" }}
+                onClick={searchFunction}
+              >
+                Search
+              </Button>
+            </Input.Group>
+          </NavLink>
+        )}
 
+        {"---------------"}
+        <NavLink to={"/coin-convertor"}>
+          <h3 onClick={handleHideSearch}>Coin Converter</h3>
         </NavLink>
-      )}
-
-      {"---------------"}
-      <NavLink to={"/coin-convertor"}>
-        <h3 onClick={handleHideSearch}>Coin Converter</h3>
-      </NavLink>
-     
+      </div>
+      <div className="logo">
+        <img src="./861bac90cbe64151929e1d382c2b0a52.png" alt="Logo" />
+      </div>
     </div>
-    <div className="logo">
-       <img  src="./861bac90cbe64151929e1d382c2b0a52.png" alt="Logo" />
-    </div>
-    </div>
-    
   );
 }
 

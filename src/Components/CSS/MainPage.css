@@ -1,11 +1,27 @@
 .ChartnCoin{
     display: flex;
-    gap: 2rem;
-    
+    gap: 2rem; 
 }
 .MainPage{
     background-color: rgb(241, 250, 238);
     overflow: scroll;
     height: 80vh;
     overflow-x: hidden;
+}
+.currencyChartHeading{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    align-items: baseline;
+    margin-right: 1rem;
+    justify-content: flex-end;
+}
+#demo-simple-select-label{
+    margin: 1rem;
+}
+.headingOfChart{
+    height: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
 }

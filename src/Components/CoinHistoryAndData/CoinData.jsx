@@ -12,15 +12,16 @@ import { SearchContext } from "../Contexts/searchContext";
 export default function CoinData() {
   const { search, setSearch } = useContext(SearchContext);
   const [coinData, setCoinData] = useState({});
-  let [api, setApi] = useState(
-    `https://api.coingecko.com/api/v3/coins/${search}`
-  );
+  // let [api, setApi] = useState(
+  //   `https://api.coingecko.com/api/v3/coins/${search}`
+  // );
   useEffect(() => {
     async function getdata() {
-      var response = await axios.get(api);
+      var response = await axios.get(`https://api.coingecko.com/api/v3/coins/${search}`);
       setCoinData({ ...response.data });
     }
     getdata();
+    console.log(search,"comming from coindata")
   }, [search]);
 
   const {
@@ -36,7 +37,7 @@ export default function CoinData() {
       {!(Object.keys(coinData).length === 0) ? (
         <Card
           sx={{ maxWidth: 450 }}
-          style={{ backgroundColor: "rgb(241, 250, 238)" , width:"25vw"}}
+          style={{ backgroundColor: "rgb(241, 250, 238)" , marginTop:"0.5rem", width:"25vw"}}
         >
           <CardHeader title={name} subheader="October 29 2022" />
           <CardMedia 
