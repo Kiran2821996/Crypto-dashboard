@@ -4,7 +4,7 @@ import { createContext,useState } from 'react'
 const searchContextOne=createContext();
 
 function ContextSecondary({children}) {
-    const [ searchOne,setSearchOne]=useState("BTC");
+    const [ searchOne,setSearchOne]=useState("USDC");
 
   return (
     <div>

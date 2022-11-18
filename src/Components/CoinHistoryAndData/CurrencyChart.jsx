@@ -12,7 +12,7 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { SearchContext } from "../Contexts/searchContext";
 
-import "../CSS/CurrencyChart.css";
+import "../css/CurrencyChart.css";
 
 export default function CurrencyChart() {
   let [data, setdata] = useState([]);

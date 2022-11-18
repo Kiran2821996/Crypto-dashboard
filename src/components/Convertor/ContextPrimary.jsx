@@ -7,12 +7,15 @@ function ContextPrimary({children}) {
     const [ search,setSearch]=useState("BTC");
 
   return (
+    
     <div>
+    
         <searchContext.Provider value={{search,setSearch}}>
-            {children}
+          {children}
         </searchContext.Provider>
     </div>
   )
 }
 
-export { ContextPrimary,searchContext}
+export { ContextPrimary}
+export { searchContext }

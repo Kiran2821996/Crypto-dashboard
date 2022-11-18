@@ -3,7 +3,7 @@ import CoinData from "./CoinData";
 import CurrencyChart from "./CurrencyChart";
 import MenuAppBar from "./MenuAppBar";
 
-import "../CSS/MainPage.css"
+import "../css/MainPage.css"
 
 export default function MainPage() {
   return (

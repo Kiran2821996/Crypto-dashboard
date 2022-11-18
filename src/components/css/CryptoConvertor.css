@@ -9,6 +9,24 @@ body{
     background-color:#f1faee;
 }
 
+/* .primaryCard{
+    background-color: red;
+} */
+
+.convertorConatainer{
+    display: flex;
+    background-color: #a8dadc;
+}
+
+.site-card-border-less-wrapper{
+    margin: 0  50px;
+    padding: 20px 0 0 0 ;
+}
+
+.btn-exchange-rate-container{
+    margin: 0px 0px;
+}
+
 
 .input_select{
     display: flex;
@@ -17,4 +35,25 @@ body{
 .convertBtn{
     background-color: #1d3557;
     color: #f1faee;
+    width: 400px;
+    font-size: 23px;
+    padding: 20px;
+}
+.exChangeRateDisplay{
+    background-color: #e63946;
+    width: 400px;
+    height: 200px;
+    margin: 20px 0;
+}
+
+.cryptoIcon{
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
+.cryptoIconOne{
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 50px;
 }
