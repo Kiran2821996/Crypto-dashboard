@@ -19,6 +19,7 @@ import "../CSS/MainPage.css";
 
 export default function CurrencyChart() {
   const [data, setdata] = useState([]);
+
   const { search, setSearch } = useContext(SearchContext);
   const [currency, setCurrency] = useState("usd");
   const [api, setApi] = useState(
@@ -27,6 +28,7 @@ export default function CurrencyChart() {
 
   const handleCurrency = (e) => {
     setCurrency(e.target.value);
+    console.log(currency, "coming  from charts")
     setApi(
       `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=${e.target.value}&days=10&interval=daily`
     );
@@ -37,7 +39,7 @@ export default function CurrencyChart() {
       const response = await axios.get(api);
       setdata(response.data.prices);
     }
-    
+
     getdata();
   }, [search, currency]);
 
@@ -57,7 +59,6 @@ export default function CurrencyChart() {
   return (
     <div className="CurrencyChart">
       <h1 className="headingOfChart">
-        {" "}
         The below chart shows currency price of past month
       </h1>
       <div className="currencyChartHeading">
@@ -66,8 +67,8 @@ export default function CurrencyChart() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={currency}
-          label="Age"
-          style={{ height: "1.6rem", marginLeft: "0.5rem" }}
+          label="Currency"
+          style={{ height: "1.6rem", marginLeft: "0.5rem" , color:"white",border:"1px solid green"}}
           onChange={handleCurrency}
         >
           <MenuItem value={"eur"}>Euro</MenuItem>

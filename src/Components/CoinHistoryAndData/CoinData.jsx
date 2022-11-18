@@ -9,19 +9,19 @@ import Typography from "@mui/material/Typography";
 
 import { SearchContext } from "../Contexts/searchContext";
 
+import "../CSS/MainPage.css";
+
 export default function CoinData() {
   const { search, setSearch } = useContext(SearchContext);
   const [coinData, setCoinData] = useState({});
-  // let [api, setApi] = useState(
-  //   `https://api.coingecko.com/api/v3/coins/${search}`
-  // );
   useEffect(() => {
     async function getdata() {
-      var response = await axios.get(`https://api.coingecko.com/api/v3/coins/${search}`);
+      var response = await axios.get(
+        `https://api.coingecko.com/api/v3/coins/${search}`
+      );
       setCoinData({ ...response.data });
     }
     getdata();
-    console.log(search,"comming from coindata")
   }, [search]);
 
   const {
@@ -37,11 +37,16 @@ export default function CoinData() {
       {!(Object.keys(coinData).length === 0) ? (
         <Card
           sx={{ maxWidth: 450 }}
-          style={{ backgroundColor: "rgb(241, 250, 238)" , marginTop:"0.5rem", width:"25vw"}}
+          style={{
+            backgroundColor: "rgb(0, 21, 41)",
+            color: "white",
+            marginTop: "0.5rem",
+            width: "25vw",
+          }}
         >
-          <CardHeader title={name} subheader="October 29 2022" />
-          <CardMedia 
-          style={{width:"200px"}}
+          <CardHeader title={name} />
+          <CardMedia
+            style={{ width: "200px" }}
             component="img"
             height="auto"
             image={image.large}
@@ -50,22 +55,27 @@ export default function CoinData() {
           <CardContent>
             <Typography
               variant="h6"
-              color="black"
-              style={{ display: "flex", alignItems: "baseline" }}
+              color="white"
+              style={{ display: "flex", alignItems: "baseline" ,lineHeight:"1"}}
             >
-              Current Price :
-              <Typography  variant="h6" color="red"> ${market_data.ath.usd}</Typography>
+              Current Price &nbsp;
+              <Typography variant="h6" color="red">
+              ${market_data.ath.usd}
+              </Typography>
             </Typography>
             <Typography
               variant="h6"
-              color="black"
-              style={{ display: "flex", alignItems: "baseline" }}
+              color="white"
+              style={{ display: "flex", alignItems: "baseline",  }}
             >
-              Rank : No.&nbsp;  <Typography variant="h6" color="red">{market_cap_rank}</Typography>
+              Market Rank : &nbsp;{" "}
+              <Typography variant="h6" color="red">
+              No.{market_cap_rank}
+              </Typography>
             </Typography>
             <Typography
               variant="h6"
-              color="black"
+              color="white"
               style={{ display: "flex", alignItems: "baseline" }}
             >
               Market upvote: &nbsp;
@@ -75,11 +85,13 @@ export default function CoinData() {
             </Typography>
             <Typography
               variant="h6"
-              color="black"
+              color="white"
               style={{ display: "flex", alignItems: "baseline" }}
             >
-             Volume:  &nbsp; 
-              <Typography variant="h6" color="red">{coinData.tickers[0].volume.toFixed(2)}</Typography>
+              Volume: &nbsp;
+              <Typography variant="h6" color="red">
+                {coinData.tickers[0].volume.toFixed(2)}
+              </Typography>
             </Typography>
           </CardContent>
           <CardActions disableSpacing></CardActions>
