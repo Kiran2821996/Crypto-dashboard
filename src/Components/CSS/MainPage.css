@@ -31,3 +31,14 @@
 .tableCell{
 color:white;
 }
+.profileLinks{
+    margin-top:1rem;
+    display: flex;
+    gap: 1rem;
+}
+.profileCards{
+    display:flex;
+    gap:2rem;
+    align-items: center;
+    justify-content: center;
+}

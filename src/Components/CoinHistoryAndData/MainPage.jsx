@@ -5,6 +5,7 @@ import CurrencyChart from "./CurrencyChart";
 
 import "../CSS/MainPage.css"
 import CoinTable from "./CoinTable";
+import CardComponent from "./CardComponent";
 
 export default function MainPage() {
 
@@ -15,6 +16,7 @@ export default function MainPage() {
         <CurrencyChart />
       </div>
       <CoinTable/>
+      <CardComponent/>
     </div>
   );
 }

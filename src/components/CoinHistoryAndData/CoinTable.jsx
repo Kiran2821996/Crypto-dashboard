@@ -14,11 +14,11 @@ import { Typography } from "antd";
 import "../CSS/MainPage.css";
 
 export default function CoinTable() {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] =useState(10);
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
+  const handleChangePage = (event, page) => {
+    setPage(page);
   };
 
   const handleChangeRowsPerPage = (event) => {
@@ -137,10 +137,14 @@ export default function CoinTable() {
               </TableBody>
             </Table>
           </TableContainer>
-          <TablePagination
-            rowsPerPageOptions={[10, 25, 100]}
+          <TablePagination style={{
+            display:"flex",
+            alignItems:"baseline"
+            ,justifyContent:"flex-end"
+          }}
+            rowsPerPageOptions={[10, 25]}
             component="div"
-            count={coinData.length}
+            count={25}
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}
