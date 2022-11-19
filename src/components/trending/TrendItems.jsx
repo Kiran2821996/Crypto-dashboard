@@ -9,6 +9,8 @@ function TrendItems({ data }) {
   const [interval, setInterval] = useState(10);
   const [modal2Open, setModal2Open] = useState(false);
 
+  
+
   useEffect(() => {
     axios
       .get(
@@ -21,6 +23,7 @@ function TrendItems({ data }) {
     setdataClick(item);
     setModal2Open(true);
   };
+
 
   return (
     <div>
