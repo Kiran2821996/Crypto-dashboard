@@ -33,7 +33,6 @@ export default function CoinTable() {
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=dogecoin%2C%2bitcoin&category=cryptocurrency&order=market_cap_desc&per_page=100&page=1&sparkline=false `
       );
       setCoinData([...response.data]);
-      console.log(response.data);
     }
     getdata();
   }, []);
@@ -50,7 +49,7 @@ export default function CoinTable() {
         }}
         gutterBottom
       >
-        The Most Popular Currencies
+        The Most Popular Crypto Currencies🔥
       </Typography>
       {!(coinData.length === 0) ? (
         <Paper sx={{ width: "100%" }}>
