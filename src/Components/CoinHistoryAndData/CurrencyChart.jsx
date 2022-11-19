@@ -90,7 +90,6 @@ export default function CurrencyChart() {
           bottom: 0,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="day" />
         <YAxis dataKey="value" />
         <Tooltip />

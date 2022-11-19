@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CoinCards() {
+export default function introCards() {
   return (
     <div>
         
