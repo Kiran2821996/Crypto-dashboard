@@ -15,7 +15,7 @@ import "../CSS/MainPage.css";
 
 export default function CoinTable() {
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] =useState(10);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const handleChangePage = (event, page) => {
     setPage(page);
@@ -36,6 +36,14 @@ export default function CoinTable() {
     }
     getdata();
   }, []);
+
+  const tableCellArray = [
+    "Currency Name",
+    "Symbol",
+    "Market Rank",
+    "Current Price",
+    "Price Change in last 24h",
+  ];
 
   return (
     <>
@@ -61,22 +69,13 @@ export default function CoinTable() {
             >
               <TableHead>
                 <TableRow>
-                  <TableCell style={{ color: "white" }}>
-                    Currency Name
-                  </TableCell>
-                  <TableCell style={{ color: "white" }} align="right">
-                    Symbol
-                  </TableCell>
-                  <TableCell style={{ color: "white" }} align="right">
-                    Market Rank
-                  </TableCell>
-                  <TableCell style={{ color: "white" }} align="right">
-                    Current Price
-                  </TableCell>
-                  <TableCell style={{ color: "white" }} align="right">
-                    Price Change in last 24h
-                  </TableCell>
-                 
+                  {tableCellArray.map((cell) => {
+                    return (
+                      <TableCell style={{ color: "white" }} align="center">
+                        {cell}
+                      </TableCell>
+                    );
+                  })}
                 </TableRow>
               </TableHead>
               <TableBody style={{ color: "white" }}>
@@ -104,7 +103,7 @@ export default function CoinTable() {
                         >
                           {name}
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell align="center">
                           <img
                             style={{ width: "5rem", height: "5rem" }}
                             src={image}
@@ -112,21 +111,21 @@ export default function CoinTable() {
                           />
                         </TableCell>
 
-                        <TableCell style={{ color: "white" }} align="right">
+                        <TableCell style={{ color: "white" }} align="center">
                           Rank No . {market_cap_rank}
                         </TableCell>
 
-                        <TableCell style={{ color: "white" }} align="right">
+                        <TableCell style={{ color: "white" }} align="center">
                           {current_price}
                         </TableCell>
                         {price_change_24h < 0 ? (
-                          <TableCell style={{ color: "red" }} align="right">
+                          <TableCell style={{ color: "red" }} align="center">
                             {price_change_24h.toFixed(1)} $
                           </TableCell>
                         ) : (
                           <TableCell
                             style={{ color: "chartreuse" }}
-                            align="right"
+                            align="center"
                           >
                             + {price_change_24h.toFixed(1)} $
                           </TableCell>
@@ -137,11 +136,12 @@ export default function CoinTable() {
               </TableBody>
             </Table>
           </TableContainer>
-          <TablePagination style={{
-            display:"flex",
-            alignItems:"baseline"
-            ,justifyContent:"flex-end"
-          }}
+          <TablePagination
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              justifyContent: "flex-end",
+            }}
             rowsPerPageOptions={[10, 25]}
             component="div"
             count={25}
