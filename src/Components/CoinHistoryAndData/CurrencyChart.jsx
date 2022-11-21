@@ -1,15 +1,7 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  Tooltip,
-} from "recharts";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
+import { AreaChart, Area, XAxis, YAxis, Tooltip } from "recharts";
+import { InputLabel, MenuItem, Select } from "@mui/material";
 import axios from "axios";
 
 import { SearchContext } from "../Contexts/searchContext";
@@ -27,7 +19,7 @@ export default function CurrencyChart() {
 
   const handleCurrency = (e) => {
     setCurrency(e.target.value);
-    console.log(currency, "coming  from charts")
+    console.log(currency, "coming  from charts");
     setApi(
       `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=${e.target.value}&days=10&interval=daily`
     );
@@ -67,7 +59,12 @@ export default function CurrencyChart() {
           id="demo-simple-select"
           value={currency}
           label="Currency"
-          style={{ height: "1.6rem", marginLeft: "0.5rem" , color:"white",border:"1px solid green"}}
+          style={{
+            height: "1.6rem",
+            marginLeft: "0.5rem",
+            color: "white",
+            border: "1px solid green",
+          }}
           onChange={handleCurrency}
         >
           <MenuItem value={"eur"}>Euro</MenuItem>
