@@ -96,6 +96,7 @@ export default function CoinTable() {
                           "&:last-child td, &:last-child th": { border: 0 },
                         }}
                       >
+
                         <TableCell
                           style={{ color: "white" }}
                           component="th"
@@ -110,7 +111,7 @@ export default function CoinTable() {
                             alt=""
                           />
                         </TableCell>
-
+                        
                         <TableCell style={{ color: "white" }} align="center">
                           Rank No . {market_cap_rank}
                         </TableCell>
