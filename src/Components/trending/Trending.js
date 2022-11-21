@@ -78,7 +78,7 @@ const Trending = () => {
             <PolarRadiusAxis />
             <Radar
               dataKey="item.price_btc"
-              stroke="#457B9D"
+              stroke="black"
               fill="black"
               fillOpacity={0.6}
             />
