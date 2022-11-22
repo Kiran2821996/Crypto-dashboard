@@ -1,11 +1,11 @@
 import React from "react";
 
+import CoinTable from "./CoinTable";
+import CardComponent from "./CardComponent";
 import CoinData from "./CoinData";
 import CurrencyChart from "./CurrencyChart";
 
 import "../CSS/MainPage.css"
-import CoinTable from "./CoinTable";
-import CardComponent from "./CardComponent";
 
 export default function MainPage() {
 

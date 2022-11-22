@@ -19,7 +19,6 @@ export default function CurrencyChart() {
 
   const handleCurrency = (e) => {
     setCurrency(e.target.value);
-    console.log(currency, "coming  from charts");
     setApi(
       `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=${e.target.value}&days=10&interval=daily`
     );
@@ -46,6 +45,13 @@ export default function CurrencyChart() {
   objectData.sort((a, b) => {
     return a.day - b.day;
   });
+  let currencyArray = [
+    { 0: "eur", 1: "Euro" },
+    { 0: "usd", 1: "Dollar" },
+    { 0: "inr", 1: "Rupee" },
+    { 0: "jpy", 1: "Yen" },
+    { 0: "gbp", 1: "British Pound" },
+  ];
 
   return (
     <div className="CurrencyChart">
@@ -67,11 +73,9 @@ export default function CurrencyChart() {
           }}
           onChange={handleCurrency}
         >
-          <MenuItem value={"eur"}>Euro</MenuItem>
-          <MenuItem value={"usd"}>Dollar</MenuItem>
-          <MenuItem value={"inr"}>Rupee</MenuItem>
-          <MenuItem value={"jpy"}>Yen</MenuItem>
-          <MenuItem value={"gbp"}>British Pound</MenuItem>
+          {currencyArray.map((currency) => {
+            return <MenuItem value={currency[0]}>{currency[1]}</MenuItem>;
+          })}
         </Select>
       </div>
 
