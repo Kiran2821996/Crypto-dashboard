@@ -37,7 +37,7 @@ const Trending = () => {
         <h2>Market Rank Vs Coins</h2>
         <div className="area_chart">
           <AreaChart
-            width={700}
+            width={650}
             height={300}
             data={data}
             margin={{

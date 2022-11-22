@@ -1,32 +1,37 @@
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-} from "recharts";
-
 import React from "react";
 import { useState, useEffect, useContext } from "react";
+import { AreaChart, Area, XAxis, YAxis, Tooltip } from "recharts";
+import { InputLabel, MenuItem, Select } from "@mui/material";
 import axios from "axios";
+
 import { SearchContext } from "../Contexts/searchContext";
 
-import "../CSS/CurrencyChart.css";
+import "../CSS/MainPage.css";
 
 export default function CurrencyChart() {
-  let [data, setdata] = useState([]);
-  let { search, setSearch } = useContext(SearchContext);
-  let [api, setApi] = useState(
-    `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=usd&days=10&interval=daily`
+  const [data, setdata] = useState([]);
+
+  const { search, setSearch } = useContext(SearchContext);
+  const [currency, setCurrency] = useState("usd");
+  const [api, setApi] = useState(
+    `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=${currency}&days=10&interval=daily`
   );
+
+  const handleCurrency = (e) => {
+    setCurrency(e.target.value);
+    setApi(
+      `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=${e.target.value}&days=10&interval=daily`
+    );
+  };
+
   useEffect(() => {
     async function getdata() {
       const response = await axios.get(api);
       setdata(response.data.prices);
     }
+
     getdata();
-  }, [search]);
+  }, [search, currency]);
 
   let objectData = data.map(function (x) {
     var a = new Date(x[0] * 1000);
@@ -36,46 +41,59 @@ export default function CurrencyChart() {
       value: x[1],
     };
   });
+
   objectData.sort((a, b) => {
     return a.day - b.day;
   });
+  let currencyArray = [
+    { 0: "eur", 1: "Euro" },
+    { 0: "usd", 1: "Dollar" },
+    { 0: "inr", 1: "Rupee" },
+    { 0: "jpy", 1: "Yen" },
+    { 0: "gbp", 1: "British Pound" },
+  ];
 
   return (
     <div className="CurrencyChart">
+      <h1 className="headingOfChart">
+        The below chart shows currency price of past month
+      </h1>
+      <div className="currencyChartHeading">
+        <InputLabel id="demo-simple-select-label">Select Currency </InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={currency}
+          label="Currency"
+          style={{
+            height: "1.6rem",
+            marginLeft: "0.5rem",
+            color: "white",
+            border: "1px solid green",
+          }}
+          onChange={handleCurrency}
+        >
+          {currencyArray.map((currency) => {
+            return <MenuItem value={currency[0]}>{currency[1]}</MenuItem>;
+          })}
+        </Select>
+      </div>
+
       <AreaChart
         width={650}
-        height={450}
+        height={350}
         data={objectData}
-        margin={{ top: 100, right: 10, left: 30, bottom: 0 }}
+        margin={{
+          top: 10,
+          right: 30,
+          left: 0,
+          bottom: 0,
+        }}
       >
-        <defs>
-          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-            <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-          </linearGradient>
-          <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#16c1db" stopOpacity={0.8} />
-            <stop offset="95%" stopColor="#16c1db" stopOpacity={0} />
-          </linearGradient>
-        </defs>
         <XAxis dataKey="day" />
         <YAxis dataKey="value" />
-        <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
-        <Area
-          type="monotone"
-          dataKey="day"
-          stroke="#8884d8"
-          fillOpacity={1}
-          fill="url(#colorUv)"
-        />
-        <Area
-          type="monotone"
-          dataKey="value"
-          stroke="#82ca9d"
-          fillOpacity={1}
-          fill="url(#colorPv)"
-        />
+        <Area type="monotone" dataKey="value" stroke="#457B9D" fill="#A8DADC" />
       </AreaChart>
     </div>
   );
