@@ -18,7 +18,7 @@ import TrendItems from "./TrendItems";
 
 import "./Trending.css";
 
-const Trending= ()=>{
+const Trending = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -26,8 +26,11 @@ const Trending= ()=>{
       .get("https://api.coingecko.com/api/v3/search/trending")
       .then((response) => {
         setData([...response.data.coins]);
+       
+       
       });
   }, []);
+
   return (
     <div className="trending">
       <div className="trend_chart">
@@ -68,12 +71,15 @@ const Trending= ()=>{
             data={data}
           >
             <PolarGrid />
-            <PolarAngleAxis dataKey="item.name" />
+            <PolarAngleAxis
+              dataKey="item.name"
+              style={{ fill: "#A8DADC", fillOpacity: "0.5" }}
+            />
             <PolarRadiusAxis />
             <Radar
               dataKey="item.price_btc"
-              stroke="#457B9D"
-              fill="#A8DADC"
+              stroke="black"
+              fill="black"
               fillOpacity={0.6}
             />
           </RadarChart>
@@ -84,6 +90,6 @@ const Trending= ()=>{
       </div>
     </div>
   );
-}
+};
 
 export default Trending;
