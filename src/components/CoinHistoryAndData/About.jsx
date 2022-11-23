@@ -1,25 +1,66 @@
 import React from "react";
-import { Card } from "antd";
+import { Card, Col, Row } from "antd";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Typography } from "@mui/material";
+import {} from "antd";
 
-import "../CSS/MainPage.css";
+import "../css/MainPage.css";
 
 const { Meta } = Card;
 
-const CardComponent = () => (
-  <>
+const About = () => (
+  <div className="about_main">
+    <Typography
+      variant="h3"
+      color="white"
+      textAlign="center"
+      paddingTop="2rem"
+      gutterBottom
+    >
+      About Project
+    </Typography>
+    <Typography
+      variant="p"
+      color="white"
+      fontSize="1.5rem"
+      textAlign="center"
+      paddingTop="2rem"
+      gutterBottom
+    >
+      This project is developed by a group of three, where each one is
+      responsible for making of each of three major components of this app. Those are as follows.
+      
+    </Typography>
+    <Typography
+      variant="p"
+      color="white"
+      fontSize="1.5rem"
+      paddingTop="2rem"
+      gutterBottom
+    >
+      <ul>
+        <li> Trending @Top 7 Currencies - B.D Kiran Kumar</li>
+        <li> Search and Crypto Data Table - Shivansh Rawat</li>
+        <li>Crypto Coin Converter & Exchange Rate Teller - Ketan Shetge</li>
+      </ul>
+      <p> The primary function of dashboard is to track cryptocurrencies and coins and
+    monitor their historical prices and current values so that you can manage
+   crypto related financial plans accordingly.</p>
+
+   <p>This Project effectively uses the core concepts of react including hooks, routes , axios and react libraries - Material UI , React- Charts and Ant Design .Which collectively enables us to view the currencies history data , exchange rates, Trending etc. </p>
+    </Typography>
+  
     <Typography
       variant="h3"
       color="white"
       textAlign="center"
       marginTop="2rem"
+      paddingTop="2rem"
       gutterBottom
     >
-      Meet The Developer Team
+      Meet The Developers of Dashboard
     </Typography>
-
     <div className="profileCards">
       <Card
         hoverable
@@ -34,7 +75,7 @@ const CardComponent = () => (
           />
         }
       >
-        <Meta title="Ketan Shetge" description="Trainee" />
+        <Meta title="Ketan Shetge" description="Front End Developer " />
         <div className="profileLinks">
           <a href="https://www.linkedin.com/in/ketan-shetge-03248a224/">
             <LinkedInIcon />
@@ -58,7 +99,7 @@ const CardComponent = () => (
           />
         }
       >
-        <Meta title="B.D Kiran Kumar" description="Project Leader" />
+        <Meta title="B.D Kiran Kumar" description="Trainee" />
         <div className="profileLinks">
           <a href="https://www.linkedin.com/in/bdkirankumar/">
             <LinkedInIcon />
@@ -93,7 +134,7 @@ const CardComponent = () => (
         </div>
       </Card>
     </div>
-  </>
+  </div>
 );
 
-export default CardComponent;
+export default About;

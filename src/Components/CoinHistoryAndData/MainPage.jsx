@@ -1,11 +1,10 @@
 import React from "react";
 
 import CoinTable from "./CoinTable";
-import CardComponent from "./CardComponent";
 import CoinData from "./CoinData";
 import CurrencyChart from "./CurrencyChart";
 
-import "../CSS/MainPage.css"
+import "../css/MainPage.css"
 
 export default function MainPage() {
 
@@ -16,7 +15,7 @@ export default function MainPage() {
         <CurrencyChart />
       </div>
       <CoinTable/>
-      <CardComponent/>
+
     </div>
   );
 }

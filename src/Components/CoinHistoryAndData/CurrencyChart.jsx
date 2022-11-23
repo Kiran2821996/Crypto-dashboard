@@ -6,7 +6,7 @@ import axios from "axios";
 
 import { SearchContext } from "../Contexts/searchContext";
 
-import "../CSS/MainPage.css";
+import "../css/MainPage.css";
 
 export default function CurrencyChart() {
   const [data, setdata] = useState([]);

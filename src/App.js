@@ -8,6 +8,7 @@ import Trending from "./components/trending/Trending";
 import HeaderNav from "./components/header/HeaderNav";
 
 import "./App.css";
+import About from "./components/CoinHistoryAndData/About";
 
 const { Header, Sider, Content } = Layout;
 
@@ -28,6 +29,7 @@ function App() {
               <Route path="/" element={<Trending/>} />
               <Route path="/search-a-coin" element={ <MainPage/>} />
               <Route path="/coin-convertor" />
+              <Route path="/about" element= {<About/>}/>
             </Routes>
           </Content>
         </Layout>
