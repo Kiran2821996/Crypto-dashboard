@@ -4,7 +4,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Typography } from "@mui/material";
 
-import "../CSS/MainPage.css";
+import "../css/MainPage.css";
 
 const { Meta } = Card;
 

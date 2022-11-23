@@ -5,7 +5,7 @@ import CardComponent from "./CardComponent";
 import CoinData from "./CoinData";
 import CurrencyChart from "./CurrencyChart";
 
-import "../CSS/MainPage.css"
+import "../css/MainPage.css"
 
 export default function MainPage() {
 

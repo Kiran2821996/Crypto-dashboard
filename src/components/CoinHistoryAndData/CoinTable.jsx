@@ -11,7 +11,7 @@ import Paper from "@mui/material/Paper";
 import { TablePagination } from "@mui/material";
 import { Typography } from "antd";
 
-import "../CSS/MainPage.css";
+import "../css/MainPage.css";
 
 export default function CoinTable() {
   const [page, setPage] = useState(0);

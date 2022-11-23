@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 
 import { SearchContext } from "../Contexts/searchContext";
 
-import "../CSS/MainPage.css";
+import "../css/MainPage.css";
 
 export default function CoinData() {
   const { search, setSearch } = useContext(SearchContext);
