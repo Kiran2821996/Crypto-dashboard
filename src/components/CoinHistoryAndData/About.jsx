@@ -5,7 +5,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { Typography } from "@mui/material";
 import {} from "antd";
 
-import "../css/MainPage.css";
+import "../CSS/MainPage.css";
 
 const { Meta } = Card;
 
