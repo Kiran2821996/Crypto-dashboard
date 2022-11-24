@@ -6,12 +6,15 @@ import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Card } from "antd";
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import axios from "axios";
 
 import { ExchangeRate } from "./ExchangeRate";
 import { CryptoLogo } from "./CryptoLogo";
 import { searchContext } from "./ContextPrimary";
 import { searchContextOne } from "./ContextSecondary";
+import {CryptoMarketGraph} from "./CryptoMarketGraph";
 
 import "../css/CryptoConvertor.css";
 
@@ -35,6 +38,7 @@ export function CryptoConvertor() {
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${primaryCurrency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`
       )
       .then((response) => {
+        console.log(response.data);
         setCryptoLogoPrimary(response.data);
       });
   }, [primaryCurrency]);
@@ -88,15 +92,19 @@ export function CryptoConvertor() {
     setSearchOne(e.target.value);
   };
 
+  const handleAmount=(e)=>{
+    setAmount(e.target.value);
+  }
+
   return (
-    <>
+    <div className="mainContainer">
       <div className="convertorConatainer">
         <div className="site-card-border-less-wrapper">
           <Card
             title="Primary Currency"
             className="primaryCard"
             bordered={true}
-            style={{ width: 400 }}
+            style={{ width: 400 ,height:220 , backgroundColor:"#e5e5e5"}}
           >
             <TextField
               id="outlined-number"
@@ -104,7 +112,7 @@ export function CryptoConvertor() {
               type="number"
               InputLabelProps={{ shrink: true }}
               value={amount}
-              onChange={(e) => setAmount(e.target.value)}
+              onChange={handleAmount}
             />
 
             <FormControl sx={{ minWidth: 120 }}>
@@ -128,7 +136,7 @@ export function CryptoConvertor() {
           <Card
             title="Secondary Currency"
             bordered={true}
-            style={{ width: 400 }}
+            style={{ width: 400,height:220 ,backgroundColor:"#e5e5e5"}}
           >
             <TextField
               id="outlined-number"
@@ -166,37 +174,94 @@ export function CryptoConvertor() {
             >
               Convert
             </Button>
-            <div className="exChangeRateDisplay">
-              <ExchangeRate
+          </div>
+        </div>
+
+        <div>
+          <div>
+            {cryptoLogoPrimary.map(({symbol,image,name,price_change_24h,market_cap_rank,last_updated}) => {
+              {
+                
+                if (symbol === search.toLowerCase()) {
+                  return (
+                    <>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          "& > :not(style)": {
+                            m: 3,
+                            width: 128,
+                            height: 128,
+                          },
+                        }}
+                      >
+                        <Paper elevation={5} sx={{minWidth:450,minHeight:220,padding:2,backgroundColor:"#adb5bd"} }>
+                        <div className="cryptoDetails">
+                          <div>
+                            <img src={image} className="cryptoIcon" alt="" />
+                          </div>
+                          <div>
+                            <p className="keyText">Name : <span className="ValueText">{name}</span></p>
+                            <p className="keyText"> Price Change(24h): <span className="ValueText">${price_change_24h}</span></p>
+                            <p className="keyText">Market cap rank : <span className="ValueText">{market_cap_rank}</span></p>
+                            <p className="keyText">Last Updated : <span className="ValueText">{last_updated}</span></p>
+                          </div>
+                        </div>
+                          </Paper>
+                      </Box>
+                    </>
+                  );
+                }
+              }
+            })}
+          </div>
+          <div>
+            {cryptoLogoSecondary.map(({symbol,image,name,price_change_24h,market_cap_rank,last_updated}) => {
+              {
+                if (symbol === searchOne.toLowerCase()) {
+                  return (
+                    <>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          "& > :not(style)": {
+                            m: 3,
+                            width: 128,
+                            height: 128,
+                          },
+                        }}
+                      >
+                        <Paper elevation={5} sx={{minWidth:450,minHeight:220,padding:2,backgroundColor:"#adb5bd"}}>
+                        <div className="cryptoDetails">
+                          <div>
+                            <img src={image} className="cryptoIcon" alt="" />
+                          </div>
+                          <div>
+                            <p className="keyText">Name : <span className="ValueText">{name}</span></p>
+                            <p className="keyText"> Price Change(24h): <span className="ValueText">${price_change_24h}</span></p>
+                            <p className="keyText">Market cap rank : <span className="ValueText">{market_cap_rank}</span></p>
+                            <p className="keyText">Last Updated : <span className="ValueText">{last_updated}</span></p>
+                          </div>
+                        </div>
+                          </Paper>
+                      </Box>
+                    </>
+                  );
+                }
+              }
+            })}
+          </div>
+        </div>
+        <CryptoMarketGraph/>
+
+      </div>
+      <ExchangeRate
                 exchangeRate={exchangeRate}
                 primaryCurrency={primaryCurrency}
                 secondarycurrency={secondaryCurrency}
               />
-            </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            {cryptoLogoPrimary.map((item) => {
-              {
-                if (item.symbol === search.toLowerCase()) {
-                  return <img src={item.image} className="cryptoIcon" alt="" />;
-                }
-              }
-            })}
-
-          </div>
-          <div>
-            {cryptoLogoSecondary.map((item) => {
-              {
-                if (item.symbol === searchOne.toLowerCase()) {
-                  return <img src={item.image} className="cryptoIconOne" alt="" />;
-                }
-              }
-            })}
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 }

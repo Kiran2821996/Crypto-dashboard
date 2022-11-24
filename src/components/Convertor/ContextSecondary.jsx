@@ -8,7 +8,7 @@ function ContextSecondary({children}) {
 
   return (
     <div>
-        <searchContextOne.Provider value={{searchOne,setSearchOne}}>
+        <searchContextOne.Provider value={{searchOne,setSearchOne}}>    
             {children}
         </searchContextOne.Provider>
     </div>

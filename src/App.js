@@ -14,7 +14,7 @@ import HeaderNav from "./components/header/HeaderNav";
 
 import "./App.css";
 
-const { Header, Sider} = Layout;
+const { Header, Sider } = Layout;
 
 function App() {
   return (
@@ -30,9 +30,9 @@ function App() {
           <Content>
             <HeaderNav />
             <Routes>
-              <Route path="/" element={<Trending/>} />
-              <Route path="/search-a-coin" element={ <MainPage/>} />
-              <Route path="/coin-convertor" element={<CryptoConvertor />}/>
+              <Route path="/" element={<Trending />} />
+              <Route path="/search-a-coin" element={<MainPage />} />
+              <Route path="/coin-convertor" element={<CryptoConvertor />} />
             </Routes>
           </Content>
         </Layout>
