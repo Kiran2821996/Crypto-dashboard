@@ -1,53 +1,35 @@
 import React, { useState, useEffect } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
 import axios from "axios";
+
+import Pop from "./Pop";
 
 function TrendItems({ data }) {
   const [dataShow, setDataShow] = useState([]);
-  const [dataClick, setdataClick] = useState("BTC");
-  const [toggle, setToggle] = useState(false);
+  const [dataClick, setdataClick] = useState();
+  const [interval, setInterval] = useState(10);
+  const [modal2Open, setModal2Open] = useState(false);
+
+  
 
   useEffect(() => {
     axios
       .get(
-        `https://api.coingecko.com/api/v3/coins/${dataClick}/market_chart?vs_currency=inr&days=5&interval=daily`
+        `https://api.coingecko.com/api/v3/coins/${dataClick}/market_chart?vs_currency=inr&days=${interval}&interval=daily`
       )
       .then((res) => setDataShow([...res.data.prices]));
-  }, [dataClick]);
-
-  let objectData = dataShow.map(function (x) {
-    var a = new Date(x[0] * 1000);
-    var date = a.getDate();
-    return {
-      day: date,
-      price: x[1],
-    };
-  });
-  objectData.sort((a, b) => {
-    return a.day - b.day;
-  });
+  }, [dataClick, interval]);
 
   const handleClick = (item) => {
     setdataClick(item);
-    setToggle(true);
+    setModal2Open(true);
   };
 
-  const handleClose = () => {
-    setToggle(false);
-  };
 
   return (
     <div>
-      {data.map((item, idx) => {
+      <h2 className="recommends">coinSmartly Recommends</h2>
+    <div className="trendmap_block" >
+    {data.map((item, idx) => {
         return (
           <div
             className="trend_block_item"
@@ -64,35 +46,18 @@ function TrendItems({ data }) {
           </div>
         );
       })}
-      {toggle && (
-        <div className="pop_screen">
-          <h1>{dataClick}</h1>
-          <button onClick={handleClose}>close</button>
-          <AreaChart
-            width={630}
-            height={350}
-            data={objectData}
-            margin={{ top: 100, right: 10, left: 30, bottom: 0 }}
-          >
-            <Legend />
-            <XAxis dataKey="day" />
-            <YAxis dataKey="price" />
-            <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-
-            <Area
-              type="monotone"
-              dataKey="price"
-              stroke="#457B9D"
-              fill="#F1FAEE"
-              fillOpacity={0.5}
-            />
-          </AreaChart>
-        </div>
-      )}
+    </div>
+      
+      <Pop
+        modal2Open={modal2Open}
+        setModal2Open={setModal2Open}
+        dataShow={dataShow}
+        dataClick={dataClick}
+        data={data}
+        setInterval={setInterval}
+      />
     </div>
   );
 }
 
 export default TrendItems;
-

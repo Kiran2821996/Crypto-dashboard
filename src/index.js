@@ -5,6 +5,7 @@ import App from "./App";
 import { ContextPrimary } from "./components/Convertor/ContextPrimary";
 import { ContextSecondary } from "./components/Convertor/ContextSecondary";
 import { SearchProvider } from "./components/Contexts/searchContext";
+import 'antd/dist/antd.css';
 import { BrowserRouter } from "react-router-dom";
 
 import "antd/dist/antd.css";
