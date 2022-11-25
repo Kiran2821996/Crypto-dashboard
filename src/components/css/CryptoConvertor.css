@@ -3,18 +3,24 @@ body{
     background-color:#f1faee;
 }
 
-.mainContainer{
-    height: 80vh;
+/* .mainContainer{
+    /* height: 80vh; */
+/* } */
+
+.mainPageCovertor{
+    /* height: 74vh; */
+    height: 70vh;
+    overflow-y: auto;
 }
 
 .convertorConatainer{
     display: flex;
     background-color:rgba(0, 21, 41);
-    height: 63vh;
+    /* height: 64vh; */
+    height: 60vh;
 }
 
 .site-card-border-less-wrapper{
-    margin: 10px  20px;
     padding: 20px 0 0 0 ;
     height: 400px;
 }
@@ -57,7 +63,7 @@ body{
 }
 
 .cryptoIconOne{
-    width: 100px;
+    width: 80px;
     border-radius: 50%;
 
 }
@@ -69,10 +75,12 @@ body{
 
 .keyText{
     color: red;
-    font-weight: 600;
+    font-size: 12px;
+    /* font-weight: 600; */
+    
 }
 
 .ValueText{
     color: black;
-    font-weight: 400;
+    /* font-weight: 400; */
 }

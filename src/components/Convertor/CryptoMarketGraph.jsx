@@ -27,7 +27,7 @@ export function CryptoMarketGraph() {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <div>
-        <BarChart width={600} height={500} data={myData}>
+        <BarChart width={570} height={400} data={myData}>
           <XAxis dataKey="name" />
           <YAxis />
           <Bar dataKey="market_cap_rank" fill="#83c5be" />

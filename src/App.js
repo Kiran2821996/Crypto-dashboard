@@ -1,7 +1,7 @@
-import { CryptoConvertor } from "./components/Convertor/CryptoConvertor";
+import { CryptoConvertor } from "./Components/Convertor/CryptoConvertor";
 import "antd/dist/antd.css";
 import { Content } from "antd/lib/layout/layout";
-import { Context } from "./components/Convertor/ContextPrimary";
+import { Context } from "./Components/Convertor/ContextPrimary";
 
 import { Layout } from "antd";
 import { Routes, Route } from "react-router-dom";
@@ -14,6 +14,7 @@ import HeaderNav from "./Components/header/HeaderNav";
 
 import "./App.css";
 import About from "./Components/CoinHistoryAndData/About";
+import CovertorMainPage from "./Components/Convertor/CovertorMainPage";
 
 const { Header, Sider } = Layout;
 
@@ -31,16 +32,13 @@ function App() {
           <Content>
             <HeaderNav />
             <Routes>
-<<<<<<< HEAD
-              <Route path="/" element={<Trending />} />
-              <Route path="/search-a-coin" element={<MainPage />} />
-              <Route path="/coin-convertor" element={<CryptoConvertor />} />
-=======
+              
+             
               <Route path="/" element={<Trending/>} />
               <Route path="/search-a-coin" element={ <MainPage/>} />
-              <Route path="/coin-convertor" />
+              <Route path="/coin-convertor" element={<CovertorMainPage />} />
+            
               <Route path="/about" element= {<About/>}/>
->>>>>>> 8b110a9457e23cdd90934ab4dde9204ecd13410e
             </Routes>
           </Content>
         </Layout>

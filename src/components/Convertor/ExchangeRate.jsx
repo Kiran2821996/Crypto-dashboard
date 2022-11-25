@@ -4,7 +4,7 @@ import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 
-import "../css/ExchangeRate.css";
+import "../CSS/ExchangeRate.css";
 import { Margin } from "@mui/icons-material";
 
 const Item = styled(Paper)(({ theme }) => ({

@@ -4,7 +4,7 @@ import CoinTable from "./CoinTable";
 import CoinData from "./CoinData";
 import CurrencyChart from "./CurrencyChart";
 
-import "../css/MainPage.css"
+import "../CSS/MainPage.css"
 
 export default function MainPage() {
 
