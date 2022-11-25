@@ -1,0 +1,29 @@
+.exchangeRateText{
+    background-color: white;
+    font-size: 28px;
+    color: green;
+}
+
+.exchangeRateContainer{
+    justify-content: center;
+    height: 10vh;
+}
+
+.currencyChangeRate{
+    display: flex;
+    justify-content: center;
+}
+
+.exchangeRateValue{
+    color: blue;
+    font-size: 33px;
+}
+
+.fromTo{
+    color: red;
+    font-size: 28px;
+}
+
+.exchangeRateLogo{
+    width: 30px;
+}

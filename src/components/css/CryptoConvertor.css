@@ -1,0 +1,86 @@
+
+body{
+    background-color:#f1faee;
+}
+
+/* .mainContainer{
+    /* height: 80vh; */
+/* } */
+
+.mainPageCovertor{
+    /* height: 74vh; */
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.convertorConatainer{
+    display: flex;
+    background-color:rgba(0, 21, 41);
+    /* height: 64vh; */
+    height: 60vh;
+}
+
+.site-card-border-less-wrapper{
+    padding: 20px 0 0 0 ;
+    height: 400px;
+}
+
+.ant-card {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 33px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum', "tnum";
+    position: relative;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.btn-exchange-rate-container{
+    margin: 0px 0px;
+}
+
+
+.input_select{
+    display: flex;
+}
+
+.convertBtn{
+    background-color: #1d3557;
+    color: #f1faee;
+    width: 400px;
+    font-size: 23px;
+    padding: 20px;
+}
+
+.cryptoIcon{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.cryptoIconOne{
+    width: 80px;
+    border-radius: 50%;
+
+}
+
+.cryptoDetails{
+    display: flex;
+    justify-content: space-between;
+}
+
+.keyText{
+    color: red;
+    font-size: 12px;
+    /* font-weight: 600; */
+    
+}
+
+.ValueText{
+    color: black;
+    /* font-weight: 400; */
+}

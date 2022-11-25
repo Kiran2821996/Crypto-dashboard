@@ -1,19 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { SearchProvider } from './Components/Contexts/searchContext';
-import 'antd/dist/antd.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+import App from "./App";
+import { ContextPrimary } from "./Components/Convertor/ContextPrimary";
+import { ContextSecondary } from "./Components/Convertor/ContextSecondary";
+import { SearchProvider } from "./Components/Contexts/searchContext";
 import { BrowserRouter } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import "antd/dist/antd.css";
+import "./index.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-        <SearchProvider>
-          <App />
-        </SearchProvider>
+      <ContextSecondary>
+        <ContextPrimary>
+          <SearchProvider>
+            <App />
+          </SearchProvider>
+        </ContextPrimary>
+      </ContextSecondary>
     </BrowserRouter>
   </React.StrictMode>
 );
-
-
