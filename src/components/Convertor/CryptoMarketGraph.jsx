@@ -33,6 +33,7 @@ export function CryptoMarketGraph() {
           <Bar dataKey="market_cap_rank" fill="#83c5be" />
           <Tooltip />
         </BarChart>
+        <h1 style={{textAlign:"center",color:"white"}}>The Bar Chart shows the current Market Capital Rank</h1>
       </div>
     </ResponsiveContainer>
   );

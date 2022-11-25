@@ -6,13 +6,14 @@ import { Context } from "./components/Convertor/ContextPrimary";
 import { Layout } from "antd";
 import { Routes, Route } from "react-router-dom";
 
-import MainPage from "./components/CoinHistoryAndData/MainPage";
-import CoinList from "./components/coinList/CoinList";
-import News from "./components/news/News";
-import Trending from "./components/trending/Trending";
-import HeaderNav from "./components/header/HeaderNav";
+import MainPage from "./Components/CoinHistoryAndData/MainPage";
+import CoinList from "./Components/coinList/CoinList";
+import News from "./Components/news/News";
+import Trending from "./Components/trending/Trending";
+import HeaderNav from "./Components/header/HeaderNav";
 
 import "./App.css";
+import About from "./Components/CoinHistoryAndData/About";
 
 const { Header, Sider } = Layout;
 
@@ -30,9 +31,16 @@ function App() {
           <Content>
             <HeaderNav />
             <Routes>
+<<<<<<< HEAD
               <Route path="/" element={<Trending />} />
               <Route path="/search-a-coin" element={<MainPage />} />
               <Route path="/coin-convertor" element={<CryptoConvertor />} />
+=======
+              <Route path="/" element={<Trending/>} />
+              <Route path="/search-a-coin" element={ <MainPage/>} />
+              <Route path="/coin-convertor" />
+              <Route path="/about" element= {<About/>}/>
+>>>>>>> 8b110a9457e23cdd90934ab4dde9204ecd13410e
             </Routes>
           </Content>
         </Layout>

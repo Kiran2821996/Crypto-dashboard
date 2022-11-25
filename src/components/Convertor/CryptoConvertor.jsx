@@ -6,15 +6,15 @@ import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Card } from "antd";
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import axios from "axios";
 
 import { ExchangeRate } from "./ExchangeRate";
 import { CryptoLogo } from "./CryptoLogo";
 import { searchContext } from "./ContextPrimary";
 import { searchContextOne } from "./ContextSecondary";
-import {CryptoMarketGraph} from "./CryptoMarketGraph";
+import { CryptoMarketGraph } from "./CryptoMarketGraph";
 
 import "../css/CryptoConvertor.css";
 
@@ -92,9 +92,9 @@ export function CryptoConvertor() {
     setSearchOne(e.target.value);
   };
 
-  const handleAmount=(e)=>{
+  const handleAmount = (e) => {
     setAmount(e.target.value);
-  }
+  };
 
   return (
     <div className="mainContainer">
@@ -104,7 +104,7 @@ export function CryptoConvertor() {
             title="Primary Currency"
             className="primaryCard"
             bordered={true}
-            style={{ width: 400 ,height:220 , backgroundColor:"#e5e5e5"}}
+            style={{ width: 400, height: 220, backgroundColor: "#e5e5e5" }}
           >
             <TextField
               id="outlined-number"
@@ -136,7 +136,7 @@ export function CryptoConvertor() {
           <Card
             title="Secondary Currency"
             bordered={true}
-            style={{ width: 400,height:220 ,backgroundColor:"#e5e5e5"}}
+            style={{ width: 400, height: 220, backgroundColor: "#e5e5e5" }}
           >
             <TextField
               id="outlined-number"
@@ -179,89 +179,169 @@ export function CryptoConvertor() {
 
         <div>
           <div>
-            {cryptoLogoPrimary.map(({symbol,image,name,price_change_24h,market_cap_rank,last_updated}) => {
-              {
-                
-                if (symbol === search.toLowerCase()) {
-                  return (
-                    <>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          "& > :not(style)": {
-                            m: 3,
-                            width: 128,
-                            height: 128,
-                          },
-                        }}
-                      >
-                        <Paper elevation={5} sx={{minWidth:450,minHeight:220,padding:2,backgroundColor:"#adb5bd"} }>
-                        <div className="cryptoDetails">
-                          <div>
-                            <img src={image} className="cryptoIcon" alt="" />
-                          </div>
-                          <div>
-                            <p className="keyText">Name : <span className="ValueText">{name}</span></p>
-                            <p className="keyText"> Price Change(24h): <span className="ValueText">${price_change_24h}</span></p>
-                            <p className="keyText">Market cap rank : <span className="ValueText">{market_cap_rank}</span></p>
-                            <p className="keyText">Last Updated : <span className="ValueText">{last_updated}</span></p>
-                          </div>
-                        </div>
+            {cryptoLogoPrimary.map(
+              ({
+                symbol,
+                image,
+                name,
+                price_change_24h,
+                market_cap_rank,
+                last_updated,
+              }) => {
+                {
+                  if (symbol === search.toLowerCase()) {
+                    return (
+                      <>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            "& > :not(style)": {
+                              m: 3,
+                              width: 128,
+                              height: 128,
+                            },
+                          }}
+                        >
+                          <Paper
+                            elevation={5}
+                            sx={{
+                              minWidth: 450,
+                              minHeight: 220,
+                              padding: 2,
+                              backgroundColor: "#adb5bd",
+                            }}
+                          >
+                            <div className="cryptoDetails">
+                              <div>
+                                <img
+                                  src={image}
+                                  className="cryptoIcon"
+                                  alt=""
+                                />
+                              </div>
+                              <div>
+                                <p className="keyText">
+                                  Name :{" "}
+                                  <span className="ValueText">{name}</span>
+                                </p>
+                                <p className="keyText">
+                                  {" "}
+                                  Price Change(24h):{" "}
+                                  <span className="ValueText">
+                                    ${price_change_24h}
+                                  </span>
+                                </p>
+                                <p className="keyText">
+                                  Market cap rank :{" "}
+                                  <span className="ValueText">
+                                    {market_cap_rank}
+                                  </span>
+                                </p>
+                                <p className="keyText">
+                                  Last Updated :{" "}
+                                  <span className="ValueText">
+                                    {last_updated}
+                                  </span>
+                                </p>
+                              </div>
+                            </div>
                           </Paper>
-                      </Box>
-                    </>
-                  );
+                        </Box>
+                      </>
+                    );
+                  }
                 }
               }
-            })}
+            )}
           </div>
           <div>
-            {cryptoLogoSecondary.map(({symbol,image,name,price_change_24h,market_cap_rank,last_updated}) => {
-              {
-                if (symbol === searchOne.toLowerCase()) {
-                  return (
-                    <>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          "& > :not(style)": {
-                            m: 3,
-                            width: 128,
-                            height: 128,
-                          },
-                        }}
-                      >
-                        <Paper elevation={5} sx={{minWidth:450,minHeight:220,padding:2,backgroundColor:"#adb5bd"}}>
-                        <div className="cryptoDetails">
-                          <div>
-                            <img src={image} className="cryptoIcon" alt="" />
-                          </div>
-                          <div>
-                            <p className="keyText">Name : <span className="ValueText">{name}</span></p>
-                            <p className="keyText"> Price Change(24h): <span className="ValueText">${price_change_24h}</span></p>
-                            <p className="keyText">Market cap rank : <span className="ValueText">{market_cap_rank}</span></p>
-                            <p className="keyText">Last Updated : <span className="ValueText">{last_updated}</span></p>
-                          </div>
-                        </div>
+            {cryptoLogoSecondary.map(
+              ({
+                symbol,
+                image,
+                name,
+                price_change_24h,
+                market_cap_rank,
+                last_updated,
+              }) => {
+                {
+                  if (symbol === searchOne.toLowerCase()) {
+                    return (
+                      <>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            "& > :not(style)": {
+                              m: 3,
+                              width: 128,
+                              height: 128,
+                            },
+                          }}
+                        >
+                          <Paper
+                            elevation={5}
+                            sx={{
+                              minWidth: 450,
+                              minHeight: 220,
+                              padding: 2,
+                              backgroundColor: "#adb5bd",
+                            }}
+                          >
+                            <div className="cryptoDetails">
+                              <div>
+                                <img
+                                  src={image}
+                                  className="cryptoIcon"
+                                  alt=""
+                                />
+                              </div>
+                              <div>
+                                <p className="keyText">
+                                  Name :{" "}
+                                  <span className="ValueText">{name}</span>
+                                </p>
+                                <p className="keyText">
+                                  {" "}
+                                  Price Change(24h):{" "}
+                                  <span className="ValueText">
+                                    ${price_change_24h}
+                                  </span>
+                                </p>
+                                <p className="keyText">
+                                  Market cap rank :{" "}
+                                  <span className="ValueText">
+                                    {market_cap_rank}
+                                  </span>
+                                </p>
+                                <p className="keyText">
+                                  Last Updated :{" "}
+                                  <span className="ValueText">
+                                    {last_updated}
+                                  </span>
+                                </p>
+                              </div>
+                            </div>
                           </Paper>
-                      </Box>
-                    </>
-                  );
+                        </Box>
+                      </>
+                    );
+                  }
                 }
               }
-            })}
+            )}
           </div>
         </div>
-        <CryptoMarketGraph/>
-
+        <div>
+          <CryptoMarketGraph />
+        </div>
       </div>
       <ExchangeRate
-                exchangeRate={exchangeRate}
-                primaryCurrency={primaryCurrency}
-                secondarycurrency={secondaryCurrency}
-              />
+        exchangeRate={exchangeRate}
+        primaryCurrency={primaryCurrency}
+        secondarycurrency={secondaryCurrency}
+      />
     </div>
   );
 }

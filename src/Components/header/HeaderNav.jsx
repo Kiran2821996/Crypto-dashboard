@@ -25,40 +25,52 @@ function HeaderNav() {
   return (
     <div>
       <div className="nav_link">
-        <NavLink to={"/"} end>
-          <h3 onClick={handleHideSearch}>TRENDS @ TOP 7</h3>
-        </NavLink>
-        {"---------------"}
-        {showSearch ? (
-          <NavLink to={"/search-a-coin"}>
-            {" "}
-            <h3 onClick={handleShowSearch}>Search a Coin</h3>
+        <button >
+          <NavLink to={"/"} end>
+            <h3 className="nav_text" onClick={handleHideSearch}>TRENDS @ TOP 7</h3>
           </NavLink>
-        ) : (
-          <NavLink to={"/search-a-coin"}>
-            <Input.Group compact>
-              <Input
-                style={{
-                  width: "20rem",
-                }}
-                placeholder ="Search your favourite crypto currency....."
-                defaultValue={value}
-                onChange={handleChange}
-              />
-              <Button
-                style={{ backgroundColor: " #1D3557", color: "white" }}
-                onClick={searchFunction}
-              >
-                Search
-              </Button>
-            </Input.Group>
-          </NavLink>
-        )}
+        </button >
+        
+          {showSearch ? (
+            <button >
+            <NavLink to={"/search-a-coin"}>
+              {" "}
+              <h3 className="nav_text" onClick={handleShowSearch}>Search a Coin</h3>
+            </NavLink>
+        </button >
+          ) : (
+            <NavLink to={"/search-a-coin"}>
+              <Input.Group compact>
+                <Input
+                  style={{
+                    width: "20rem",
+                    height:"3rem"
+                    ,borderRadius:"0.4rem 0 0 0.4rem "
+                  }}
+                  placeholder="Search your favourite crypto currency....."
+                  defaultValue={value}
+                  onChange={handleChange}
+                />
+                <Button
+                  style={{ backgroundColor: " #1D3557", color: "white", height:"3rem" ,borderRadius:"0 0.4rem 0.4rem 0"}}
+                  onClick={searchFunction}
+                >
+                  Search
+                </Button>
+              </Input.Group>
+            </NavLink>
+          )}
 
-        {"---------------"}
-        <NavLink to={"/coin-convertor"}>
-          <h3 onClick={handleHideSearch}>Coin Converter</h3>
-        </NavLink>
+        <button >
+          <NavLink to={"/coin-convertor"}>
+            <h3 className="nav_text" onClick={handleHideSearch}>Coin Converter</h3>
+          </NavLink>
+        </button >
+        <button >
+          <NavLink to={"/about"}>
+            <h3 className="nav_text" onClick={handleHideSearch}>About </h3>
+          </NavLink>
+        </button >
       </div>
       <div className="logo">
         <img src="./861bac90cbe64151929e1d382c2b0a52.png" alt="Logo" />
