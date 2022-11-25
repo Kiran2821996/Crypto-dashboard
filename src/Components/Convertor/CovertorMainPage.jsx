@@ -8,7 +8,6 @@ function CovertorMainPage() {
   return (
     <div className='mainPageCovertor'>
         <CryptoConvertor/>
-        <ExchangeRate/>
     </div>
   )
 }

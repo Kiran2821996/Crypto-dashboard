@@ -38,7 +38,6 @@ export function CryptoConvertor() {
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${primaryCurrency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`
       )
       .then((response) => {
-        console.log(response.data);
         setCryptoLogoPrimary(response.data);
       });
   }, [primaryCurrency]);
@@ -104,7 +103,7 @@ export function CryptoConvertor() {
             title="Primary Currency"
             className="primaryCard"
             bordered={true}
-            style={{ width: 360, height: 180, backgroundColor: "#e5e5e5" }}
+            style={{ width: 370, height: 180, backgroundColor: "#e5e5e5" }}
           >
             <TextField
               id="outlined-number"
@@ -136,7 +135,7 @@ export function CryptoConvertor() {
           <Card
             title="Secondary Currency"
             bordered={true}
-            style={{ width: 360, height: 180, backgroundColor: "#e5e5e5" }}
+            style={{ width: 370, height: 180, backgroundColor: "#e5e5e5" }}
           >
             <TextField
               id="outlined-number"
@@ -169,7 +168,7 @@ export function CryptoConvertor() {
             <Button
               className="convertBtn"
               variant="contained"
-              sx={{width:360, backgroundColor: "#1d3557", color: "#f1faee" }}
+              sx={{width:370, backgroundColor: "#1d3557", color: "#f1faee" }}
               onClick={handleConvert}
             >
               Convert
@@ -337,7 +336,10 @@ export function CryptoConvertor() {
           <CryptoMarketGraph />
         </div>
       </div>
-     
+      <ExchangeRate
+      exchangeRate={exchangeRate}
+      primaryCurrency={primaryCurrency}
+      secondarycurrency={secondaryCurrency}/>
     </div>
   );
 }

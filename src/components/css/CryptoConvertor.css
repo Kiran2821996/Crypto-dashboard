@@ -1,14 +1,4 @@
-
-body{
-    background-color:#f1faee;
-}
-
-/* .mainContainer{
-    /* height: 80vh; */
-/* } */
-
 .mainPageCovertor{
-    /* height: 74vh; */
     height: 70vh;
     overflow-y: auto;
 }
@@ -16,13 +6,12 @@ body{
 .convertorConatainer{
     display: flex;
     background-color:rgba(0, 21, 41);
-    /* height: 64vh; */
     height: 60vh;
 }
 
 .site-card-border-less-wrapper{
-    padding: 20px 0 0 0 ;
-    height: 400px;
+    padding: 2% 0 0 0 ;
+    height: 20%;
 }
 
 .ant-card {
@@ -52,9 +41,8 @@ body{
 .convertBtn{
     background-color: #1d3557;
     color: #f1faee;
-    width: 400px;
-    font-size: 23px;
-    padding: 20px;
+    font-size: 23%;
+    padding: 20%;
 }
 
 .cryptoIcon{
@@ -76,11 +64,8 @@ body{
 .keyText{
     color: red;
     font-size: 12px;
-    /* font-weight: 600; */
-    
 }
 
 .ValueText{
     color: black;
-    /* font-weight: 400; */
 }

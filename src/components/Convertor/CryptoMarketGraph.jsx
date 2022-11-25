@@ -19,7 +19,6 @@ export function CryptoMarketGraph() {
     axios
       .get(`https://frozen-harbor-02472.herokuapp.com/bitcoin`)
       .then((response) => {
-        console.log(response.data);
         setMyData(response.data);
       });
   }, []);
