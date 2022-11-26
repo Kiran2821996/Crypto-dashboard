@@ -53,6 +53,7 @@ export function CryptoConvertor() {
   }, [secondaryCurrency]);
 
   const handleConvert = () => {
+    console.log("convert")
     const options = {
       method: "GET",
       url: url,
@@ -115,12 +116,10 @@ export function CryptoConvertor() {
             />
 
             <FormControl sx={{ minWidth: 80 }}>
-              <InputLabel id="demo-simple-select-label">Crypto</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={primaryCurrency}
-                label="Crypto"
                 onChange={handleSelectPrimary}
               >
                 {currencies.map((currency, index) => (
@@ -147,12 +146,10 @@ export function CryptoConvertor() {
             />
 
             <FormControl sx={{ minWidth: 80 }}>
-              <InputLabel id="demo-simple-select-label">Crypto</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={secondaryCurrency}
-                label="Crypto"
                 onChange={handleSelectSecondary}
               >
                 {currencies.map((currency, index) => (

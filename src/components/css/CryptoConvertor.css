@@ -1,5 +1,6 @@
 .mainPageCovertor{
     height: 70vh;
+    /* height: 82vh; */
     overflow-y: auto;
 }
 
@@ -68,4 +69,27 @@
 
 .ValueText{
     color: black;
+}
+
+@media screen and (max-width:1560px) {
+    .convertorConatainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 140vh;
+    }
+    .mainPageCovertor{
+        height: 82vh;
+    }
+}
+
+@media screen and (max-width:1050px){
+    .convertorConatainer{
+        /* display: flex;
+        flex-wrap: wrap;
+        justify-content: center; */
+        background-color: white;
+        height: 280vh;
+    }
+    
 }
