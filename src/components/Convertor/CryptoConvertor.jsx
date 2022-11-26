@@ -193,7 +193,7 @@ export function CryptoConvertor() {
                             display: "flex",
                             flexWrap: "wrap",
                             "& > :not(style)": {
-                              m: 2,
+                              m: 3,
                               width: 128,
                               height: 128,
                             },
@@ -203,7 +203,7 @@ export function CryptoConvertor() {
                             elevation={5}
                             sx={{
                               minWidth: 400,
-                              minHeight: 200,
+                              minHeight: 180,
                               padding: 2,
                               backgroundColor: "#adb5bd",
                             }}
@@ -270,7 +270,7 @@ export function CryptoConvertor() {
                             display: "flex",
                             flexWrap: "wrap",
                             "& > :not(style)": {
-                              m: 2,
+                              m: 3,
                               width: 128,
                               height: 128,
                             },
@@ -280,7 +280,7 @@ export function CryptoConvertor() {
                             elevation={5}
                             sx={{
                               minWidth: 400,
-                              minHeight: 200,
+                              minHeight: 180,
                               padding: 2,
                               backgroundColor: "#adb5bd",
                             }}
