@@ -106,3 +106,8 @@
    text-align: center;
   }
 }
+
+
+.trending::-webkit-scrollbar{
+  width: 0;
+  }

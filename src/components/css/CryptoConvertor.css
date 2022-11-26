@@ -13,6 +13,10 @@ body{
     overflow-y: auto;
 }
 
+.mainPageCovertor::-webkit-scrollbar{
+    width:0;
+}
+
 .convertorConatainer{
     display: flex;
     background-color:rgba(0, 21, 41);

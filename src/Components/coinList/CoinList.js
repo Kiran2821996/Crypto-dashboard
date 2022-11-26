@@ -27,7 +27,7 @@ const CoinList = ()=>{
   }, []);
   return (
     <div>
-      <Carousel autoplay="true" dots="false">
+      <Carousel autoplay="true" dots="false" >
         {data.map((item,idx) => {
           return (
             <div style={contentStyle} key={idx}>

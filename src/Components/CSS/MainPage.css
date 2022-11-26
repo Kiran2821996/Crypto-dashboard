@@ -8,6 +8,10 @@
     height: 76.8vh;
     overflow-x: hidden;
 }
+.MainPage::-webkit-scrollbar{
+width: 0;
+}
+
 .currencyChartHeading{
     display: flex;
     flex-wrap: wrap;
@@ -49,3 +53,8 @@ color:white;
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
+.about_main::-webkit-scrollbar{
+    width: 0;
+    }
+

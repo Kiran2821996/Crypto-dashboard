@@ -17,7 +17,7 @@ const News=()=>{
       });
   }, []);
   return (
-    <Carousel autoplay="true" dotPosition="right" className="caroosel_left">
+    <Carousel autoplay="true" dotPosition="right" className="caroosel_left" >
       {data.map((item,idx) => {
         return (
           <div className="contentStyle" key={idx}>
