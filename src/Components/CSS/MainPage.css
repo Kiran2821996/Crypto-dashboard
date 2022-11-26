@@ -1,6 +1,6 @@
 .ChartnCoin{
     display: flex;
-    gap: 2rem; 
+   justify-content: space-between; 
 }
 .MainPage{
     background-color:rgb(0, 21, 41);

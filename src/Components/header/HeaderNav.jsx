@@ -25,14 +25,14 @@ function HeaderNav() {
   return (
     <div>
       <div className="nav_link">
-        <button >
+        <button className="button">
           <NavLink to={"/"} end>
             <h3 className="nav_text" onClick={handleHideSearch}>TRENDS @ TOP 7</h3>
           </NavLink>
         </button >
         
           {showSearch ? (
-            <button >
+            <button className="button">
             <NavLink to={"/search-a-coin"}>
               {" "}
               <h3 className="nav_text" onClick={handleShowSearch}>Search a Coin</h3>
@@ -61,12 +61,12 @@ function HeaderNav() {
             </NavLink>
           )}
 
-        <button >
+        <button className="button">
           <NavLink to={"/coin-convertor"}>
             <h3 className="nav_text" onClick={handleHideSearch}>Coin Converter</h3>
           </NavLink>
         </button >
-        <button >
+        <button className="button">
           <NavLink to={"/about"}>
             <h3 className="nav_text" onClick={handleHideSearch}>About </h3>
           </NavLink>
