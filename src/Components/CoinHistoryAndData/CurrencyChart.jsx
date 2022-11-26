@@ -13,20 +13,15 @@ export default function CurrencyChart() {
 
   const { search, setSearch } = useContext(SearchContext);
   const [currency, setCurrency] = useState("usd");
-  const [api, setApi] = useState(
-    `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=${currency}&days=10&interval=daily`
-  );
 
   const handleCurrency = (e) => {
     setCurrency(e.target.value);
-    setApi(
-      `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=${e.target.value}&days=10&interval=daily`
-    );
+  
   };
 
   useEffect(() => {
     async function getdata() {
-      const response = await axios.get(api);
+      const response = await axios.get( `https://api.coingecko.com/api/v3/coins/${search}/market_chart?vs_currency=${currency}&days=10&interval=daily`);
       setdata(response.data.prices);
     }
 
