@@ -16,7 +16,7 @@ function Interval({ setInterval }) {
   return (
     <div className="average_interval">
       <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-label">Average Interval</InputLabel>
+        <InputLabel>Average Interval</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"

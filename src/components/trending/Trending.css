@@ -64,6 +64,7 @@
 @media only screen and (max-width: 1200px) {
   .trending {
     flex-direction: column-reverse;
+    margin: 0 2% 0 0;
   }
   .trend_block {
     width: 100%;
@@ -92,10 +93,19 @@
     text-align: center;
   }
   .trend_block_item {
-    width: 30%;
+    width: 20%;
     flex-direction: column;
-    margin: 1%;
+    margin: 1% ;
     padding: 1%;
+    overflow-x: hidden;
+    
+  }
+  
+  .trend_block_item img{
+    margin-bottom: 5px;
+  }
+  .trend_block_item p{
+    font-size: 8px;
   }
   .area_chart {
     margin-left: 8%;
