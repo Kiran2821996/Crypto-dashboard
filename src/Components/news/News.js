@@ -4,29 +4,29 @@ import { Carousel } from "antd";
 
 import "./News.css";
 
-const News=()=>{
+const News = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
       .get(
-        "https://newsapi.org/v2/everything?q=crypto&from=2022-11-14&to=2022-11-14&sortBy=popularity&apiKey=72635734611e40d5b63c90dc5248f92b"
+        "https://newsdata.io/api/1/news?apikey=pub_13335842c8779f276e2b71e88dfb18e77379d&q=crypto"
       )
       .then((response) => {
-        setData([...response.data.articles]);
+        setData([...response.data.results]);
       });
   }, []);
   return (
-    <Carousel autoplay="true" dotPosition="right" className="caroosel_left" >
-      {data.map((item,idx) => {
+    <Carousel autoplay="true" dotPosition="right" className="caroosel_left">
+      {data.map((item, idx) => {
         return (
           <div className="contentStyle" key={idx}>
-            <a href={item.url} target="blank">
+            <a href={item.link} target="blank">
               <h1 className="news_header">{item.title}</h1>
             </a>
             <img
               className="image-headline"
-              src={item.urlToImage}
+              src={item.image_url}
               alt="Unavailable"
               width={"360px"}
             />
@@ -35,6 +35,6 @@ const News=()=>{
       })}
     </Carousel>
   );
-}
+};
 
 export default News;
