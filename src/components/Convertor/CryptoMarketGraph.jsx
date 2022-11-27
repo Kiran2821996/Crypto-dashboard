@@ -12,6 +12,8 @@ import {
 } from "recharts";
 import axios from "axios";
 
+import "../CSS/CryptoConvertor.css"
+
 export function CryptoMarketGraph() {
   const [myData, setMyData] = useState([]);
 
@@ -24,9 +26,9 @@ export function CryptoMarketGraph() {
   }, []);
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <div>
-        <BarChart width={570} height={400} data={myData}>
+    // <ResponsiveContainer width="100%" height="100%">
+      <div className="barChart">
+        <BarChart width={550} height={400} data={myData}>
           <XAxis dataKey="name" />
           <YAxis />
           <Bar dataKey="market_cap_rank" fill="#83c5be" />
@@ -34,6 +36,6 @@ export function CryptoMarketGraph() {
         </BarChart>
         <h1 style={{textAlign:"center",color:"white"}}>The Bar Chart shows the current Market Capital Rank</h1>
       </div>
-    </ResponsiveContainer>
+    // </ResponsiveContainer>
   );
 }
