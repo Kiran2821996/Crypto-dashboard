@@ -173,7 +173,7 @@ export function CryptoConvertor() {
           </div>
         </div>
 
-        <div>
+        <div className="cardConatiner">
           <div>
             {cryptoLogoPrimary.map(
               ({
@@ -188,6 +188,7 @@ export function CryptoConvertor() {
                   if (symbol === search.toLowerCase()) {
                     return (
                       <>
+                      <div>
                         <Box
                           sx={{
                             display: "flex",
@@ -244,6 +245,7 @@ export function CryptoConvertor() {
                             </div>
                           </Paper>
                         </Box>
+                        </div>
                       </>
                     );
                   }
@@ -265,6 +267,7 @@ export function CryptoConvertor() {
                   if (symbol === searchOne.toLowerCase()) {
                     return (
                       <>
+                      <div>
                         <Box
                           sx={{
                             display: "flex",
@@ -321,6 +324,7 @@ export function CryptoConvertor() {
                             </div>
                           </Paper>
                         </Box>
+                        </div>
                       </>
                     );
                   }
