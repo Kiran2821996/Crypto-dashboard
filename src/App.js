@@ -14,7 +14,6 @@ import HeaderNav from "./Components/header/HeaderNav";
 
 import "./App.css";
 import About from "./Components/CoinHistoryAndData/About";
-import CovertorMainPage from "./Components/Convertor/CovertorMainPage";
 
 const { Header, Sider } = Layout;
 
@@ -36,7 +35,7 @@ function App() {
              
               <Route path="/" element={<Trending/>} />
               <Route path="/search-a-coin" element={ <MainPage/>} />
-              <Route path="/coin-convertor" element={<CovertorMainPage />} />
+              <Route path="/coin-convertor" element={<CryptoConvertor />} />
             
               <Route path="/about" element= {<About/>}/>
             </Routes>

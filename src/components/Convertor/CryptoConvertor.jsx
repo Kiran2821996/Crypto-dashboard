@@ -38,7 +38,6 @@ export function CryptoConvertor() {
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${primaryCurrency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`
       )
       .then((response) => {
-        console.log(response.data);
         setCryptoLogoPrimary(response.data);
       });
   }, [primaryCurrency]);
@@ -54,6 +53,7 @@ export function CryptoConvertor() {
   }, [secondaryCurrency]);
 
   const handleConvert = () => {
+    console.log("convert")
     const options = {
       method: "GET",
       url: url,
@@ -104,7 +104,7 @@ export function CryptoConvertor() {
             title="Primary Currency"
             className="primaryCard"
             bordered={true}
-            style={{ width: 360, height: 180, backgroundColor: "#e5e5e5" }}
+            style={{ width: 370, height: 180, backgroundColor: "#e5e5e5" }}
           >
             <TextField
               id="outlined-number"
@@ -116,12 +116,10 @@ export function CryptoConvertor() {
             />
 
             <FormControl sx={{ minWidth: 80 }}>
-              <InputLabel id="demo-simple-select-label">Crypto</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={primaryCurrency}
-                label="Crypto"
                 onChange={handleSelectPrimary}
               >
                 {currencies.map((currency, index) => (
@@ -136,7 +134,7 @@ export function CryptoConvertor() {
           <Card
             title="Secondary Currency"
             bordered={true}
-            style={{ width: 360, height: 180, backgroundColor: "#e5e5e5" }}
+            style={{ width: 370, height: 180, backgroundColor: "#e5e5e5" }}
           >
             <TextField
               id="outlined-number"
@@ -148,12 +146,10 @@ export function CryptoConvertor() {
             />
 
             <FormControl sx={{ minWidth: 80 }}>
-              <InputLabel id="demo-simple-select-label">Crypto</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={secondaryCurrency}
-                label="Crypto"
                 onChange={handleSelectSecondary}
               >
                 {currencies.map((currency, index) => (
@@ -169,7 +165,7 @@ export function CryptoConvertor() {
             <Button
               className="convertBtn"
               variant="contained"
-              sx={{width:360, backgroundColor: "#1d3557", color: "#f1faee" }}
+              sx={{width:370, backgroundColor: "#1d3557", color: "#f1faee" }}
               onClick={handleConvert}
             >
               Convert
@@ -177,7 +173,7 @@ export function CryptoConvertor() {
           </div>
         </div>
 
-        <div>
+        <div className="cardConatiner">
           <div>
             {cryptoLogoPrimary.map(
               ({
@@ -192,12 +188,13 @@ export function CryptoConvertor() {
                   if (symbol === search.toLowerCase()) {
                     return (
                       <>
+                      <div>
                         <Box
                           sx={{
                             display: "flex",
                             flexWrap: "wrap",
                             "& > :not(style)": {
-                              m: 2,
+                              m: 3,
                               width: 128,
                               height: 128,
                             },
@@ -207,7 +204,7 @@ export function CryptoConvertor() {
                             elevation={5}
                             sx={{
                               minWidth: 400,
-                              minHeight: 200,
+                              minHeight: 180,
                               padding: 2,
                               backgroundColor: "#adb5bd",
                             }}
@@ -248,6 +245,7 @@ export function CryptoConvertor() {
                             </div>
                           </Paper>
                         </Box>
+                        </div>
                       </>
                     );
                   }
@@ -269,12 +267,13 @@ export function CryptoConvertor() {
                   if (symbol === searchOne.toLowerCase()) {
                     return (
                       <>
+                      <div>
                         <Box
                           sx={{
                             display: "flex",
                             flexWrap: "wrap",
                             "& > :not(style)": {
-                              m: 2,
+                              m: 3,
                               width: 128,
                               height: 128,
                             },
@@ -284,7 +283,7 @@ export function CryptoConvertor() {
                             elevation={5}
                             sx={{
                               minWidth: 400,
-                              minHeight: 200,
+                              minHeight: 180,
                               padding: 2,
                               backgroundColor: "#adb5bd",
                             }}
@@ -325,6 +324,7 @@ export function CryptoConvertor() {
                             </div>
                           </Paper>
                         </Box>
+                        </div>
                       </>
                     );
                   }
@@ -337,7 +337,10 @@ export function CryptoConvertor() {
           <CryptoMarketGraph />
         </div>
       </div>
-     
+      <ExchangeRate
+      exchangeRate={exchangeRate}
+      primaryCurrency={primaryCurrency}
+      secondarycurrency={secondaryCurrency}/>
     </div>
   );
 }
