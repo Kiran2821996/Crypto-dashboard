@@ -29,8 +29,8 @@ const About = () => (
       gutterBottom
     >
       This project is developed by a group of three, where each one is
-      responsible for making of each of three major components of this app. Those are as follows.
-      
+      responsible for making of each of three major components of this app.
+      Those are as follows.
     </Typography>
     <Typography
       variant="p"
@@ -44,13 +44,21 @@ const About = () => (
         <li> Search and Crypto Data Table - Shivansh Rawat</li>
         <li>Crypto Coin Converter & Exchange Rate Teller - Ketan Shetge</li>
       </ul>
-      <p> The primary function of dashboard is to track cryptocurrencies and coins and
-    monitor their historical prices and current values so that you can manage
-   crypto related financial plans accordingly.</p>
+      <p>
+        {" "}
+        The primary function of dashboard is to track cryptocurrencies and coins
+        and monitor their historical prices and current values so that you can
+        manage crypto related financial plans accordingly.
+      </p>
 
-   <p>This Project effectively uses the core concepts of react including hooks, routes , axios and react libraries - Material UI , React- Charts and Ant Design .Which collectively enables us to view the currencies history data , exchange rates, Trending etc. </p>
+      <p>
+        This Project effectively uses the core concepts of react including
+        hooks, routes , axios and react libraries - Material UI , React- Charts
+        and Ant Design .Which collectively enables us to view the currencies
+        history data , exchange rates, Trending etc.{" "}
+      </p>
     </Typography>
-  
+
     <Typography
       variant="h3"
       color="white"
@@ -75,7 +83,7 @@ const About = () => (
           />
         }
       >
-        <Meta title="Ketan Shetge" description="Front End Developer " />
+        <Meta title="Ketan Shetge"  />
         <div className="profileLinks">
           <a href="https://www.linkedin.com/in/ketan-shetge-03248a224/">
             <LinkedInIcon />
@@ -99,7 +107,7 @@ const About = () => (
           />
         }
       >
-        <Meta title="B.D Kiran Kumar" description="Trainee" />
+        <Meta title="B.D Kiran Kumar"  />
         <div className="profileLinks">
           <a href="https://www.linkedin.com/in/bdkirankumar/">
             <LinkedInIcon />
@@ -123,7 +131,7 @@ const About = () => (
           />
         }
       >
-        <Meta title="Shivansh Rawat" description="Trainee" />
+        <Meta title="Shivansh Rawat" />
         <div className="profileLinks">
           <a href="https://www.linkedin.com/in/shivansh-rawat-78aa421b5/">
             <LinkedInIcon />
