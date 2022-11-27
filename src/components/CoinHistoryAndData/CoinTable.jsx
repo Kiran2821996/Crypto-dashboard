@@ -1,16 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-<<<<<<< Updated upstream
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import { TablePagination } from "@mui/material";
-=======
 import {
   TablePagination,
   Table,
@@ -21,7 +11,6 @@ import {
   TableHead,  
   TableRow,
 } from "@mui/material";
->>>>>>> Stashed changes
 import { Typography } from "antd";
 
 import "../CSS/MainPage.css";

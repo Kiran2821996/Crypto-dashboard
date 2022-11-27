@@ -1,9 +1,5 @@
 import React from "react";
-<<<<<<< Updated upstream
 import { Card, Col, Row } from "antd";
-=======
-import { Card } from "antd";
->>>>>>> Stashed changes
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Typography } from "@mui/material";
