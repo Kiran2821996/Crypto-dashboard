@@ -14,19 +14,19 @@ import axios from "axios";
 
 import "../CSS/CryptoConvertor.css"
 
+
 export function CryptoMarketGraph() {
   const [myData, setMyData] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`https://frozen-harbor-02472.herokuapp.com/bitcoin`)
+      .get("cryptoMarketGraph.json")
       .then((response) => {
         setMyData(response.data);
       });
   }, []);
 
   return (
-    // <ResponsiveContainer width="100%" height="100%">
       <div className="barChart">
         <BarChart width={550} height={400} data={myData}>
           <XAxis dataKey="name" />
@@ -36,6 +36,5 @@ export function CryptoMarketGraph() {
         </BarChart>
         <h1 style={{textAlign:"center",color:"white"}}>The Bar Chart shows the current Market Capital Rank</h1>
       </div>
-    // </ResponsiveContainer>
   );
 }

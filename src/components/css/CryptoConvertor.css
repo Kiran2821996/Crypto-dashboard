@@ -9,6 +9,7 @@
     padding: 1%;
 }
 
+
 .barChart{
    margin: 1%;
 }
@@ -16,6 +17,67 @@
 .site-card-border-less-wrapper{
     padding: 2% 0 0 0 ;
     height: 20%;
+    color: white;
+}
+
+/* .convertorBG{
+    margin: 2% 0 0 0;
+    background-color:gray;
+    height: 90%;
+} */
+
+.ant-card-head-title { 
+    display: inline-block;
+    flex: 1 1;
+    padding: 16px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white !important; 
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentColor;
+    color: white !important;
+    padding: 4px 0 5px;
+    border: 0;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0;
+    width: 100%;
+    -webkit-animation-name: mui-auto-fill-cancel;
+    animation-name: mui-auto-fill-cancel;
+    -webkit-animation-duration: 10ms;
+    animation-duration: 10ms;
+    padding: 16.5px 14px;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentColor;
+    color: white !important;
+    padding: 4px 0 5px;
+    border: 0;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0;
+    width: 100%;
+    -webkit-animation-name: mui-auto-fill-cancel;
+    animation-name: mui-auto-fill-cancel;
+    -webkit-animation-duration: 10ms;
+    animation-duration: 10ms;
+    padding: 16.5px 14px;
 }
 
 .ant-card {
@@ -66,12 +128,12 @@
 }
 
 .keyText{
-    color: red;
+    color: white;
     font-size: 12px;
 }
 
 .ValueText{
-    color: black;
+    color: grey;
 }
 
 .convertorConatainer::-webkit-scrollbar{

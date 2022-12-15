@@ -32,6 +32,7 @@ export function CryptoConvertor() {
   const [cryptoLogoPrimary, setCryptoLogoPrimary] = useState([]);
   const [cryptoLogoSecondary, setCryptoLogoSecondary] = useState([]);
 
+
   useEffect(() => {
     axios
       .get(
@@ -97,30 +98,33 @@ export function CryptoConvertor() {
   };
 
   return (
+
+   
     <div className="mainContainer">
       <div className="convertorConatainer">
-        <div className="site-card-border-less-wrapper">
+        <div className="site-card-border-less-wrapper convertorBG">
           <Card
             title="Primary Currency"
             className="primaryCard"
             bordered={true}
-            style={{ width: 370, height: 180, backgroundColor: "#e5e5e5" }}
+            style={{ width: 370, height: 180, backgroundColor: "#00152900",color:"white", border:"1px solid white"}}
           >
             <TextField
               id="outlined-number"
-              label="Number"
               type="number"
               InputLabelProps={{ shrink: true }}
               value={amount}
               onChange={handleAmount}
+              style={{color:"white",border:"1px solid gray",borderRadius:"5px"}}
             />
 
-            <FormControl sx={{ minWidth: 80 }}>
+            <FormControl sx={{ minWidth: 80 ,color:"white" }}>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={primaryCurrency}
                 onChange={handleSelectPrimary}
+                style={{color:"white",border:"1px solid gray",borderRadius:"5px"}}
               >
                 {currencies.map((currency, index) => (
                   <MenuItem key={index} value={currency}>
@@ -134,15 +138,15 @@ export function CryptoConvertor() {
           <Card
             title="Secondary Currency"
             bordered={true}
-            style={{ width: 370, height: 180, backgroundColor: "#e5e5e5" }}
+            style={{ width: 370, height: 180, backgroundColor: "#00152900" ,color:"white",border:"1px solid white"}}
           >
             <TextField
               id="outlined-number"
-              label="Number"
               type="number"
               InputLabelProps={{ shrink: true }}
               value={result}
               disabled={true}
+              style={{border:"1px solid gray",borderRadius:"5px"}}
             />
 
             <FormControl sx={{ minWidth: 80 }}>
@@ -151,6 +155,7 @@ export function CryptoConvertor() {
                 id="demo-simple-select"
                 value={secondaryCurrency}
                 onChange={handleSelectSecondary}
+                style={{color:"white",border:"1px solid gray",borderRadius:"5px"}}
               >
                 {currencies.map((currency, index) => (
                   <MenuItem key={index} value={currency}>
@@ -167,6 +172,7 @@ export function CryptoConvertor() {
               variant="contained"
               sx={{width:370, backgroundColor: "#1d3557", color: "#f1faee" }}
               onClick={handleConvert}
+              
             >
               Convert
             </Button>
@@ -206,7 +212,8 @@ export function CryptoConvertor() {
                               minWidth: 400,
                               minHeight: 180,
                               padding: 2,
-                              backgroundColor: "#adb5bd",
+                              backgroundColor: "#00152900",
+                              border:"1px solid white",
                             }}
                           >
                             <div className="cryptoDetails">
@@ -285,7 +292,8 @@ export function CryptoConvertor() {
                               minWidth: 400,
                               minHeight: 180,
                               padding: 2,
-                              backgroundColor: "#adb5bd",
+                              backgroundColor: "#00152900",
+                              border:"1px solid white",
                             }}
                           >
                             <div className="cryptoDetails">
