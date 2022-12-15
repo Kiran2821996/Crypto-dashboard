@@ -127,7 +127,7 @@ const About = () => (
         cover={
           <img
             alt="example"
-            src="https://media-exp1.licdn.com/dms/image/C4D03AQG0KQblOnE1sw/profile-displayphoto-shrink_800_800/0/1655452966052?e=1674086400&v=beta&t=IuqeHQ_nEwl4R-DC4QrFzVrgAAutHnjyW-yf9ocPCIE"
+            src="https://media.licdn.com/dms/image/D4D03AQFhXXfToCt_XQ/profile-displayphoto-shrink_800_800/0/1670418374670?e=1676505600&v=beta&t=BfKaUCukR0KmLUMUe5Ap1KyQFlvIhbD0LpvSMVCkE50"
           />
         }
       >
