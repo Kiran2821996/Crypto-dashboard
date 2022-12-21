@@ -133,7 +133,7 @@ const About = () => (
       >
         <Meta title="Shivansh Rawat" />
         <div className="profileLinks">
-          <a href="https://www.linkedin.com/in/shivansh-rawat-78aa421b5/">
+          <a href="https://media.licdn.com/dms/image/D4D03AQFhXXfToCt_XQ/profile-displayphoto-shrink_800_800/0/1670418374670?e=1677110400&v=beta&t=HiRH1R5BgYO1IswudDMVbvCUaBlEmg-sup4VZhjUN9w">
             <LinkedInIcon />
           </a>
           <a href="https://github.com/Shivansh3218">
